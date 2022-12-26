@@ -1,0 +1,99 @@
+[
+  {
+    "title": "HomeAssistant",
+    "colour": "#161b1f",
+    "url": "http://[URL]:[PORT]/",
+    "description": "{\"enabled\":\"0\",\"override_url\":null,\"token\":null,\"first_stat_label\":null,\"first_stat_template\":null,\"second_stat_label\":null,\"second_stat_template\":null}",
+    "appid": "5c81a4f5ee23ebffa0724a22a040c54e6cb9d7c5",
+    "appdescription": "Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts."
+  },
+  {
+    "title": "Pi-hole",
+    "colour": "#161b1f",
+    "url": "http://[URL]:[PORT]/admin/login.php",
+    "description": "{\"enabled\":\"0\",\"dataonly\":\"1\",\"override_url\":null}",
+    "appid": "b89920409bdce40e08ba1023480b0546061cd577",
+    "appdescription": "Pi-hole is a Linux network-level advertisement and internet tracker blocking application which acts as a DNS sinkhole, intended for use on a private network."
+  },
+  {
+    "title": "Portainer",
+    "colour": "#161b1f",
+    "url": "https://[URL]:[PORT]",
+    "description": "{\"enabled\":\"0\",\"override_url\":null,\"username\":null,\"password\":\"xxxxxxxxxxxxx\"}",
+    "appid": "07b796b3a10eaa8b6f485ed2379187a39400b459",
+    "appdescription": "Portainer is a simple management solution for Docker. Easily manage your Docker hosts and Docker Swarm clusters via Portainer web user interface."
+  },
+  {
+    "title": "UniFi",
+    "colour": "#fafbfc",
+    "url": "https://[URL]/",
+    "description": null,
+    "appid": "8cdba423d7bb49fad21662247750cd715f08cdc5",
+    "appdescription": "The UniFi® Controller software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance."
+  },
+  {
+    "title": "Synology",
+    "colour": "#fafbfc",
+    "url": "https://[URL]:[PORT]/",
+    "description": null,
+    "appid": "8521f6e426ad621f27a6b48be57a3c6056c9cfd3",
+    "appdescription": "Synology is a popular NAS appliance"
+  },
+  {
+    "title": "Grafana",
+    "colour": "#161b1f",
+    "url": "http://[URL]:[PORT]",
+    "description": null,
+    "appid": "f519bce8b0ae84d8dbbc0a793bf6a180043be855",
+    "appdescription": "Data visualization & Monitoring with support for Graphite, InfluxDB, Prometheus, Elasticsearch and many more databases."
+  },
+  {
+    "title": "phpMyAdmin",
+    "colour": "#fafbfc",
+    "url": "http://[URL]:[PORT]",
+    "description": null,
+    "appid": "51ca673ea8e89a868706fd309777a101ac63a409",
+    "appdescription": "phpMyAdmin is a free software tool written in PHP, intended to handle the administration of MySQL over the Web. phpMyAdmin supports a wide range of operations on MySQL and MariaDB. Frequently used operations (managing databases, tables, columns, relations, indexes, users, permissions, etc) can be performed via the user interface, while you still have the ability to directly execute any SQL statement."
+  },
+  {
+    "title": "Bitwarden",
+    "colour": "#161b1f",
+    "url": "https://bitwarden.[URL]",
+    "description": null,
+    "appid": "8a846dca305866d821748c007cf6b64adf00ea22",
+    "appdescription": "Open source password management solutions for individuals, teams, and business organizations."
+  },
+  {
+    "title": "Gotify",
+    "colour": "#161b1f",
+    "url": "https://gotify.[URL]/",
+    "description": null,
+    "appid": "b3fdc0b49deb0e7db32311b64867b000409193e5",
+    "appdescription": "A self-hosted push notification service."
+  },
+  {
+    "title": "Uptime Kuma",
+    "colour": "#161b1f",
+    "url": "http://[URL]:[PORT]/status/monitor",
+    "description": null,
+    "appid": "366c6646eedab83cc4b349f198424d2291cbfa76",
+    "appdescription": "It is a self-hosted monitoring tool like \"Uptime Robot\"."
+  },
+  {
+    "title": "Tasmota (Küche)",
+    "colour": "#fafbfc",
+    "url": "http://[URL]/",
+    "description": "{\"enabled\":\"0\",\"override_url\":null}",
+    "appid": "0d318b04d2442102c6a9643405bce18b5df5cf78",
+    "appdescription": "Alternative firmware for ESP8266 based devices with easy configuration using webUI, OTA updates, automation using timers or rules, expandability and entirely local control over MQTT, HTTP, Serial or KNX."
+  },
+  {
+    "title": "Tasmota (3D Drucker)",
+    "colour": "#fafbfc",
+    "url": "http://[URL]/",
+    "description": "{\"enabled\":\"0\",\"override_url\":null}",
+    "appid": "0d318b04d2442102c6a9643405bce18b5df5cf78",
+    "appdescription": "Alternative firmware for ESP8266 based devices with easy configuration using webUI, OTA updates, automation using timers or rules, expandability and entirely local control over MQTT, HTTP, Serial or KNX."
+  }
+]
+

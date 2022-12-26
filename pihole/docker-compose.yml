@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  pihole:
+    image: pihole/pihole:latest
+    container_name: pihole
+    hostname: pihole
+
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 9030:80/tcp
+      
+    environment:
+      - TZ=$TIMEZONE                        # Zeitzone
+      - FTLCONF_REPLY_ADDR4=10.0.0.20       # IP-Adresse vom Host
+      - VIRTUAL_HOST=10.0.0.20              # IP-Adresse vom Host
+      - ADMIN_EMAIL=$EMAIL                  # Administrator E-Mail
+      - PIHOLE_DNS_=1.1.1.1;1.0.0.1         # DNS Auflösung via Cloudflair 
+      - WEBTHEME=default-dark               # Dark-Modus in der UI
+      - WEBUIBOXEDLAYOUT=traditional        # Layout für Widescreens
+      - INTERFACE=eth0                      # DNS Anfragen über eth0 zulassen
+      - DNSMASQ_LISTENING=single            # DNS Anfragen AUSSCHLIE?LICH über die INTERFACE zulassen
+
+    volumes:
+      - pihole:/etc/pihole/
+      - pihole_dnsmasq:/etc/dnsmasq.d/
+
+    labels:
+      # Watchtower - Container automatisch überwachen, melden wenn neue Version verfügbar ist
+      - "com.centurylinklabs.watchtower.monitor-only=true"
+
+    restart: always
+
+
+volumes:
+  pihole:
+    name: pihole
+    
+  pihole_dnsmasq:
+    name: pihole_dnsmasq

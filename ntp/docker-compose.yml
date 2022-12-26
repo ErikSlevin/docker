@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  ntp:
+    build: .
+    image: cturra/ntp:latest
+    container_name: ntp
+    hostname: ntp
+    restart: always
+
+    ports:
+      - 123:123/udp
+      
+    environment:
+      - NTP_SERVERS=time.cloudflare.com   # Zeitserver zum syncronisieren
+      - LOG_LEVEL=0
+
+    labels:
+      # Watchtower - Container automatisch aktualisieren
+      - "com.centurylinklabs.watchtower.enable=true"

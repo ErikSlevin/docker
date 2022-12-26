@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  heimdall:
+    image: linuxserver/heimdall:latest
+
+    container_name: heimdall
+    hostname: heimdall
+
+    restart: always
+    
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - heimdall:/config
+
+    ports:
+      - 9010:80 
+
+
+    labels:
+      # Watchtower - Container automatisch aktualisieren
+      - "com.centurylinklabs.watchtower.enable=true"
+
+volumes:
+  heimdall:
+    name: heimdall

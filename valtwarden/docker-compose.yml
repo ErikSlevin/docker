@@ -1,0 +1,65 @@
+version: "3"
+
+services:
+  bitwarden:
+    image: vaultwarden/server:latest
+
+    container_name: valtwarden
+    hostname: valtwarden
+    
+    ports:
+      - 9020:80 
+            
+    volumes:
+      - valtwarden:/data
+
+    environment:
+      #---------------------------------------------------------------------------------------------------#
+      # 1st RUN!
+      # Neuen Benutzer erstellen!
+      # - SIGNUPS_ALLOWED=true # Keine neue Benutzer zulassen 
+
+      # 2nd RUN!
+      # Container stoppen, 1st Run auskommentieren, 2nd Run auf True setzen und neu deployen!
+      # Dadurch wird die weitere Anmeldung neuer Nutzer deaktiviert.
+      - SIGNUPS_ALLOWED=false # Keine neue Benutzer zulassen 
+      #---------------------------------------------------------------------------------------------------#
+   
+      - SHOW_PASSWORD_HINT=false # Hinweise für die Passwortzurücksetzung anzeigen
+      - ORG_CREATION_USERS=none # Es können keine Organisationen erstellt werden
+      - INVITATIONS_ALLOWED=false # Es können keine neuen Benutzer eingeladen werden
+      - DOMAIN=https://bitwarden.$TLD # Zugang zu der Weboberfläche
+      - TZ=$TIMEZONE # Zeitzone via .env-FIle
+      - EMERGENCY_ACCESS_ALLOWED=false # Notzugang deaktivieren
+      - TRASH_AUTO_DELETE_DAYS=90 # Gelöschte Passwörter nach 90 Tagen löschen
+      
+    restart: always
+
+    networks:
+      - proxy
+
+    labels:
+      # Traefik
+      - "traefik.http.routers.valtwarden.rule=Host(`bitwarden.$TLD`)"                     # HTTP Domain ändern
+      - "traefik.http.routers.valtwarden-secure.rule=Host(`bitwarden.$TLD`)"              # HTTPS Domain ändern
+      - "traefik.enable=true"
+      - "traefik.http.routers.valtwarden.entrypoints=http"
+      - "traefik.http.middlewares.valtwarden-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.valtwarden.middlewares=valtwarden-https-redirect"
+      - "traefik.http.routers.valtwarden-secure.entrypoints=https"
+      - "traefik.http.routers.valtwarden-secure.tls=true"
+      - "traefik.http.routers.valtwarden-secure.tls.certresolver=http"
+      - "traefik.http.routers.valtwarden-secure.service=valtwarden"
+      - "traefik.http.services.valtwarden.loadbalancer.server.port=80"
+      - "traefik.docker.network=proxy"
+
+      # Watchtower - Container automatisch überwachen, melden wenn neue Version verfügbar ist
+      - "com.centurylinklabs.watchtower.monitor-only=true"
+
+networks:
+  proxy:
+    external: true
+
+volumes:
+  valtwarden:
+    name: valtwarden

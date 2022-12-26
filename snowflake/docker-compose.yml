@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  snowflake-proxy:
+    image: thetorproject/snowflake-proxy:latest
+    
+    container_name: snowflake-proxy
+    hostname: snowflake-proxy
+
+    network_mode: host
+
+    restart: always
+
+    labels:
+      # Watchtower - Container automatisch aktualisieren
+      - "com.centurylinklabs.watchtower.enable=true"
+
+    # Alle 10min Verbindungen zusammenfassen und in Log_File schreiben
+    command: ["-summary-interval", "10m"]
+

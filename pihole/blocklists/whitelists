@@ -1,0 +1,223 @@
+####################################################################################################
+#### WHITELISTS ####################################################################################
+#### Released: 23.12.2022 at 05:12
+####
+#### Count: 118 Domains von 47 Anbietern.
+####
+#### GitHub: https://github.com/ErikSlevin
+#### Repository: https://github.com/ErikSlevin/docker/tree/main/pihole/whitelists
+####
+#### Copyright Erik Slevin #########################################################################
+####################################################################################################
+
+#### 1DRV.COM ####################################
+1drv.com
+
+#### 1DRV.MS #####################################
+1drv.ms
+
+#### AKAMAIHD.NET ################################
+akamaihd.net
+
+#### AKAMAITECHNOLOGIES.COM ######################
+akamaitechnologies.com
+
+#### AKAMAIZED.NET ###############################
+img-s-msn-com.akamaized.net
+lastfm-img2.akamaized.net
+akamaized.net
+audio4-ak-spotify-com.akamaized.net
+audio-akp-bbr-spotify-com.akamaized.net
+audio-ak-spotify-com.akamaized.net
+spotify-com.akamaized.net
+heads-ak-spotify-com.akamaized.net
+
+#### AMAZONAWS.COM ###############################
+amazonaws.com
+s3.amazonaws.com
+
+#### ANDROID.COM #################################
+connectivitycheck.android.com
+
+#### APPCENTER.MS ################################
+in.appcenter.ms
+
+#### APPLE.COM ###################################
+appleid.apple.com
+ocsp.apple.com
+
+#### BINANCE.COM #################################
+binance.com
+accounts.binance.com
+
+#### CLOUDFLARE.COM ##############################
+cdnjs.cloudflare.com
+
+#### CLOUDFLARE.NET ##############################
+cdn.cloudflare.net
+
+#### CLOUDFRONT.NET ##############################
+d2gatte9o95jao.cloudfront.net
+d2c8v52ll5s99u.cloudfront.net
+
+#### GEFORCE.COM #################################
+gfwsl.geforce.com
+
+#### GITHUB.COM ##################################
+github.com
+
+#### GITHUB.IO ###################################
+github.io
+
+#### GITHUBUSERCONTENT.COM #######################
+raw.githubusercontent.com
+
+#### GOOGLE.COM ##################################
+cse.google.com
+0.client-channel.google.com
+clients2.google.com
+clients5.google.com
+clients4.google.com
+appsbackup-pa.clients6.google.com
+clients3.google.com
+clients1.google.com
+video-stats.l.google.com
+appspot-preview.l.google.com
+clients6.google.com
+android.clients.google.com
+
+#### GOOGLEAPIS.COM ##############################
+instantmessaging-pa.googleapis.com
+googleapis.com
+appsbackup-pa.googleapis.com
+
+#### GOOGLEVIDEO.COM #############################
+manifest.googlevideo.com
+redirector.googlevideo.com
+
+#### GOTINDER.COM ################################
+data.gotinder.com
+images-ssl.gotinder.com
+preview.gotinder.com
+api.gotinder.com
+
+#### GSTATIC.COM #################################
+connectivitycheck.gstatic.com
+fonts.gstatic.com
+gstatic.com
+
+#### JQUERY.COM ##################################
+jquery.com
+
+#### LIVE.COM ####################################
+s.gateway.messenger.live.com
+onedrive.live.com
+g.live.com
+live.com
+login.live.com
+storage.live.com
+outlook.live.com
+nexusrules.officeapps.live.com
+
+#### LIVE.NET ####################################
+docs.live.net
+skyapi.live.net
+
+#### MICROSOFT.COM ###############################
+storeedgefd.dsx.mp.microsoft.com
+settings-win.data.microsoft.com
+officeclient.microsoft.com
+geo-prod.do.dsp.mp.microsoft.com
+win10.ipv6.microsoft.com
+displaycatalog.mp.microsoft.com
+self.events.data.microsoft.com
+mobile.pipe.aria.microsoft.com
+dl.delivery.mp.microsoft.com
+xbox.ipv6.microsoft.com
+functional.events.data.microsoft.com
+continuum.dds.microsoft.com
+
+#### MICROSOFTONLINE.COM #########################
+login.microsoftonline.com
+microsoftonline.com
+
+#### MSFTCONNECTTEST.COM #########################
+msftconnecttest.com
+
+#### MSFTNCSI.COM ################################
+dns.msftncsi.com
+msftncsi.com
+
+#### OFFICE.COM ##################################
+products.office.com
+office.com
+substrate.office.com
+
+#### OFFICE.NET ##################################
+office.net
+hubblecontent.osi.office.net
+
+#### OFFICE365.COM ###############################
+office365.com
+outlook.office365.com
+
+#### ONEDRIVE.COM ################################
+onedrive.com
+api.onedrive.com
+
+#### POOL.PM #####################################
+pool.pm
+
+#### POOLTOOL.IO #################################
+pooltool.io
+
+#### S-MICROSOFT.COM #############################
+store-images.s-microsoft.com
+c.s-microsoft.com
+
+#### SFX.MS ######################################
+oneclient.sfx.ms
+p.sfx.ms
+
+#### SKYPE.COM ###################################
+ui.skype.com
+apps.skype.com
+pricelist.skype.com
+
+#### SPOTIFY.COM #################################
+spotify.com
+spclient.wg.spotify.com
+
+#### SPOTIFYCDN.NET ##############################
+spotifycdn.net
+
+#### UI.COM ######################################
+ping.ui.com
+
+#### W3SCHOOLS.COM ###############################
+w3schools.com
+
+#### WHATSAPP.COM ################################
+whatsapp.com
+web.whatsapp.com
+
+#### WHATSAPP.NET ################################
+static.whatsapp.net
+pps.whatsapp.net
+media-vie1-1.cdn.whatsapp.net
+whatsapp.net
+media-muc2-1.cdn.whatsapp.net
+g.whatsapp.net
+chat.cdn.whatsapp.net
+
+#### WINDOWSUPDATE.COM ###########################
+ctldl.windowsupdate.com
+
+#### XHCDN.COM ###################################
+pornstar-thumb.xhcdn.com
+thumb-lvlt.xhcdn.com
+static-lvlt.xhcdn.com
+thumb-user.xhcdn.com
+
+#### YOUPORN.COM #################################
+youporn.com
