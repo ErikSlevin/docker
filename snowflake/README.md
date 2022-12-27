@@ -3,13 +3,13 @@
 </p>
 
 # Snowflake
-Erlaube Nutzern in zensierten Ländern, deine Internetverbindung zu nutzen, um auf das Tor-Netzwerk zuzugreifen.
+Tor-Proxy: ermöglicht Menschen, trotz Netzsperren auf das Internet zuzugreifen
 
 ## Snowflake Monitoring (MariaDB+Grafana)
 Mit diesem Skript werden die Logdaten alle 10min an eine MariaDB gesendet, um z.B. diese mit Grafana auszuwerten.
 
 <img src="media/mariadb-connector-sample.png" width="850px"></br>
-Grafana-Dashboard herunterladen: [dashboard-snowflake.json](dashboard-snowflake.json)
+Grafana-Dashboard herunterladen: [dashboard-snowflake.json](https://github.com/ErikSlevin/docker/blob/main/grafana/dashboards/dashboard-snowflake.json)
 
 
 ### Anleitung
@@ -47,7 +47,7 @@ conn = mariadb.connect(
 Skript ausführbar machen
 ```sudo chmod +x /path/to/snowflake-mariadb.py```
 
-Stündlich skript ausführen und Daten an MariaDB senden
+Alle 10min die Zusammenfassung an die Datenbank senden.
 
 ``` shell
 sudo crontab -e

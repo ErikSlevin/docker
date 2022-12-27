@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://github.com/linuxserver/Heimdall"><img src="my-dashboard.png" width=850" alt="Grafana"></a><br/>
+<a href="https://github.com/linuxserver/Heimdall"><img src="media/my-dashboard.png" width="850" alt="heimdal"></a><br/>
 </p>
 
 # Heimdall

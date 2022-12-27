@@ -39,16 +39,17 @@ Zunächst in Gotify eine App mit dem Namen `Home Assistant` erstellen und den To
 In eurer Diskstation in der Datei `/usr/syno/etc/synowebhook.conf` folgenden Abschnitt hinzufügen und den Token bei ` X-Gotify-Key: XXXX` einfügen.
 
 1. SSH Verbindung zu der Diskstation herstellen
-2. Datei anlegen/ändern: `sudo vi /usr/syno/etc/synowebhook.conf`, vi-Editor Einfügen: `EINFG-Taste`. Dabei folgendes anpassen:
-Gotify-Port: `"port"XXXXXX:`
+2. Datei anlegen/ändern: `sudo vi /usr/syno/etc/synowebhook.conf`, vi-Editor Einfügen:
+`EINFG-Taste`. Dabei folgendes anpassen:
+Gotify-Port: `"port":1234`
 Gotify-Key: `X-Gotify-Key:XXXXXX`
-Gotifiy-URL: `"template":"http://192.168.0.XXX:XXXX/message"` und  `"url":"http://192.168.0.XXX:XXXX/message"`
+Gotifiy-URL: `"template":"http://192.168.0.XXX:XXXX/message"` und`"url":"http://192.168.0.XXX:XXXX/message"`
 
 ```json
 {
   "Gotify":{
     "needssl":false,
-        "port"XXXXXX:,
+        "port":1234,
         "prefix":"System event on  %HOSTNAME% on %DATE% at %TIME%.",
         "req_header":"Content-Type:application/json\rX-Gotify-Key:XXXXXX\r",
         "req_method":"post",
@@ -63,7 +64,7 @@ Gotifiy-URL: `"template":"http://192.168.0.XXX:XXXX/message"` und  `"url":"http:
 3. Datei abspeichern (`ESC` danach `:wq` und mit `Enter` bestätigen)
 4. Diskstation neustarten
 5. DSM Weboberfläche: `Einstellungen > Benachrichtigungen > Push-Dienst > Anwender-Webhooks > Webhooks verwalten`
-6. Es sollte nun wie folgt aussehn: [Bild-1](media/1.png), [Bild-2](media/2.png), [Bild-3](media/3.png), [Bild-4](media/14.png)
+6. Es sollte nun wie folgt aussehn: [Bild-1](media/1.png), [Bild-2](media/2.png), [Bild-3](media/3.png), [Bild-4](media/4.png)
 
 
 ## Quellen
