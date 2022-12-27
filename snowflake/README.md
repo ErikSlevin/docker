@@ -47,7 +47,7 @@ conn = mariadb.connect(
 Skript ausführbar machen
 ```sudo chmod +x /path/to/snowflake-mariadb.py```
 
-Stündlich skript ausführen und Daten an MariaDB senden
+Alle 10min die Zusammenfassung an die Datenbank senden.
 
 ``` shell
 sudo crontab -e

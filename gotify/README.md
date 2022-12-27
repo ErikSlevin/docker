@@ -63,7 +63,7 @@ Gotifiy-URL: `"template":"http://192.168.0.XXX:XXXX/message"` und  `"url":"http:
 3. Datei abspeichern (`ESC` danach `:wq` und mit `Enter` bestätigen)
 4. Diskstation neustarten
 5. DSM Weboberfläche: `Einstellungen > Benachrichtigungen > Push-Dienst > Anwender-Webhooks > Webhooks verwalten`
-6. Es sollte nun wie folgt aussehn: [Bild-1](media/1.png), [Bild-2](media/2.png), [Bild-3](media/3.png), [Bild-4](media/14.png)
+6. Es sollte nun wie folgt aussehn: [Bild-1](media/1.png), [Bild-2](media/2.png), [Bild-3](media/3.png), [Bild-4](media/4.png)
 
 
 ## Quellen
