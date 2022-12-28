@@ -1,5 +1,8 @@
-# NTP-Zeitserver
+<p align="center">
+<a href="https://hub.docker.com/r/cturra/ntp"><img src="https://camo.githubusercontent.com/f0913a317907e5ac420c62efbd1ea3bbc1cff4d18b47d29d9e8ff6e8ccfaac64/68747470733a2f2f692e696d6775722e636f6d2f7544794e6c566c2e706e67" width="150" alt="cturra"></a><br/>
+</p>
 
+# cturra
 NTP-Zeitserver für das Heimnetzwerk. 
 
 ## Testen

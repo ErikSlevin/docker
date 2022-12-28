@@ -2,8 +2,7 @@
 <a href="https://github.com/linuxserver/Heimdall"><img src="media/my-dashboard.png" width="850" alt="heimdal"></a><br/>
 </p>
 
-# Heimdal
-
+# Heimdall
 Self-Hosted Dashboard
 
 ## Custom CSS-Anpassungen
