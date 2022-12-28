@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  phpmyadmin:
+    image: phpmyadmin:latest
+
+    container_name: phpmyadmin
+    hostname: phpmyadmin
+
+    restart: always
+
+    volumes:
+     - /sessions
+     - ~/docker/phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+     - /custom/phpmyadmin/theme/:/www/themes/theme/
+
+    environment:
+      PMA_HOST: $HOST                     # Datenbank IP-Adresse
+      PMA_PORT: 3306                      # Datenbank Port (3306 - MariaDB)
+      PMA_PASSWORD: $MYSQL_ROOT_PASSWORD  # Datenbank Passwort
+      PMA_USER: root                      # Datenbank User
+
+    ports:
+      - 9050:80
+
+    labels:
+      # Watchtower - Container automatisch aktualisieren
+      - "com.centurylinklabs.watchtower.enable=true"
