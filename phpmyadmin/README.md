@@ -2,7 +2,7 @@
 <a href="https://www.phpmyadmin.net/"><img src="https://github.com/phpmyadmin/phpmyadmin/blob/master/themes/pmahomme/img/logo_right.png?raw=true" width="200px" alt="phpmyadmin"></a><br/>
 </p>
 
-#  phpmyadmin
+# phpmyadmin
 Frontend für die Administration von MySQL-Datenbanken 
 
 ## Quellen:

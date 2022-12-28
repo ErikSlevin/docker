@@ -3,7 +3,6 @@
 </p>
 
 # Watchtower
-
 Automatische aktualisierung von Docker Containern
 
 ```yaml

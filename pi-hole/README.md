@@ -2,7 +2,7 @@
 <a href="https://pi-hole.net"><img src="https://pi-hole.github.io/graphics/Vortex/Vortex_with_text.png" width="100" alt="Pi-hole"></a><br/>
 </p>
 
-#  Pi-hole
+# Pi-hole
 Seldhosted Werbeblocker für das Heimnetzwerk.
 
 ## Pihole Blockisten & Whitelisten
