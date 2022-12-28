@@ -3,7 +3,7 @@
 </p>
 
 # Snowflake
-Erlaube Nutzern in zensierten Ländern, deine Internetverbindung zu nutzen, um auf das Tor-Netzwerk zuzugreifen.
+Tor-Proxy: ermöglicht Menschen, trotz Netzsperren auf das Internet zuzugreifen
 
 ## Snowflake Monitoring (MariaDB+Grafana)
 Mit diesem Skript werden die Logdaten alle 10min an eine MariaDB gesendet, um z.B. diese mit Grafana auszuwerten.
