@@ -7,11 +7,11 @@ Self-Hosted Monitoring Tool
 
 ## Docker Host einrichten
 
-Um Docker-Container überwachen zu können, folgende Einstellungen in `Einstellungen > Docker Host` übernehmen.
+Um Docker-Container überwachen zu können, folgende Einstellungen in `Einstellungen > Docker Host` übernehmen:
 
-Anzeigename: `Pi-Docker-1`
-Verbindungstyp: `Socket`
-Docker Daemon: `/var/run/docker.sock`
+* Anzeigename: `Pi-Docker-1 (Beispiel=` 
+* Verbindungstyp: `Socket`
+* Docker Daemon: `/var/run/docker.sock`
 
 > **Hinweis**
 > Dies ist nur möglich, wenn das Volume `docker.sock` gemountet wird in der Docker-Compose File.

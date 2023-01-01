@@ -9,7 +9,7 @@ Tor-Proxy: ermöglicht Menschen, trotz Netzsperren auf das Internet zuzugreifen
 Mit diesem Skript werden die Logdaten alle 10min an eine MariaDB gesendet, um z.B. diese mit Grafana auszuwerten.
 
 <img src="media/mariadb-connector-sample.png" width="850px"></br>
-Grafana-Dashboard herunterladen: [dashboard-snowflake.json](dashboard-snowflake.json)
+Grafana-Dashboard herunterladen: [dashboard-snowflake.json](https://github.com/ErikSlevin/docker/blob/main/grafana/dashboards/dashboard-snowflake.json)
 
 
 ### Anleitung
