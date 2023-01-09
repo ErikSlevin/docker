@@ -13,7 +13,7 @@ services:
     restart: always
 
     ports:
-      - 9080:8080
+      - 9080:5555
 
     labels:
       # Watchtower - Container automatisch überwachen, melden wenn neue Version verfügbar ist
