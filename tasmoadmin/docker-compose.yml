@@ -13,8 +13,8 @@ services:
     restart: always
 
     ports:
-      - 9080:5555
-
+      - 9080:80
+      
     labels:
       # Watchtower - Container automatisch überwachen, melden wenn neue Version verfügbar ist
       - "com.centurylinklabs.watchtower.monitor-only=true"
