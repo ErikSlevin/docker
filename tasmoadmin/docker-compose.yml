@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  tasmo-admin:
+    image: ghcr.io/tasmoadmin/tasmoadmin:latest
+    
+    container_name: tasmo-admin
+    hostname: tasmo-admin
+
+    volumes:
+      - tasmo-admin:/home/pi/Docker/TasmoAdmin/data:/data
+
+    restart: always
+
+    ports:
+      - 8000:9080
+
+    labels:
+      # Watchtower - Container automatisch überwachen, melden wenn neue Version verfügbar ist
+      - "com.centurylinklabs.watchtower.monitor-only=true"
+
+volumes:
+  tasmo-admin:
+    name: tasmo-admin
