@@ -49,6 +49,16 @@ Automatisches Backup der Pihole Konfiguration und Adlisten vie Cronjob.
 
 Skript wird am 01. jeden Monats um 0 Uhr ausgeführt. Intervall ändern: [https://crontab.cronhub.io/](https://crontab.cronhub.io/)
 
+## Automatisches Aktualisierung der Ad-Listen
+
+Mithilfe dieses [Skriptes](pihole-gravity-update.sh) wird in dem Pihole Container (via Cronjob) die Ad-Listen Aktualisierung um 0 Uhr täglich angestoßen.
+
+```shell
+sudo crontabh -e
+
+0 0 */1 * * /home/erik/skripts/pihole-gravity-update.sh >> /home/erik/logs/pihole-gravity-update.sh.log 2>&1
+```
+
 ## Quellen:
 * [https://pi-hole.net/](https://pi-hole.net/)
 * [https://strobelstefan.org/2021/02/26/pi-hole-mit-unbound-werbeblocker](https://strobelstefan.org/2021/02/26/pi-hole-mit-unbound-werbeblocker-und-kontrolle-ueber-die-dns-anfragen-erhalten/)
