@@ -14,7 +14,7 @@ Automatische aktualisierung von Docker Containern
 ```yaml
     labels:
       # Watchtower - melden wenn neue version Verfügbar
-      - "com.centurylinklabs.watchtower.enable=true"
+      - "com.centurylinklabs.watchtower.monitor-only=true"
 ```
 
 ## Quellen
