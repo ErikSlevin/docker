@@ -21,11 +21,14 @@ chmod 600 /opt/containers/traefik/data/acme.json
 
 Benutzer anlegen und in der [docker-compose.yml](docker-compose.yml) unter ```traefik.http.middlewares.traefik-auth.basicauth.users=``` ändern.
 ``` shell
+# Benötigte Utilis installieren
+# sudo apt update && sudo apt install apache2-utils
+
 echo $(htpasswd -nb <user> <password>) | sed -e s/\\$/\\$\\$/g
 
-Zum Beispiel:
-echo $(htpasswd -nb benutzer strengespasswort) | sed -e s/\\$/\\$\\$/g
-Ausgabe: benutzer:$$apr1$$uNheRNLT$$apG7iqwertzfV0ob6pJFs0
+# Zum Beispiel:
+# echo $(htpasswd -nb benutzer strengespasswort) | sed -e s/\\$/\\$\\$/g
+# Ausgabe: benutzer:$$apr1$$uNheRNLT$$apG7iqwertzfV0ob6pJFs0
 ```
 
 ## Quellen
