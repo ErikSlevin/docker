@@ -26,7 +26,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.entrypoints=http"
-      - "traefik.http.routers.traefik.rule=Host(`$TLD)"                               # Ändern !
+      - "traefik.http.routers.traefik.rule=Host(`$TLD`)"                              # Ändern !
       - "traefik.http.middlewares.traefik-auth.basicauth.users=$TRAEFIKUSER"          # Ändern !
       - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
