@@ -1,8 +1,8 @@
 ####################################################################################################
 #### WHITELISTS ####################################################################################
-#### Released: 01.01.2023 at 19:51
+#### Released: 21.01.2023 at 11:44
 ####
-#### Count: 122 Domains von 50 Anbietern.
+#### Count: 126 Domains von 53 Anbietern.
 ####
 #### GitHub: https://github.com/ErikSlevin
 #### Repository: https://github.com/ErikSlevin/docker/tree/main/pi-hole/
@@ -63,6 +63,9 @@ cdn.cloudflare.net
 d2gatte9o95jao.cloudfront.net
 d2c8v52ll5s99u.cloudfront.net
 
+#### COINMARKETCAP.COM ###########################
+coinmarketcap.com
+
 #### GEFORCE.COM #################################
 gfwsl.geforce.com
 
@@ -76,17 +79,17 @@ github.io
 raw.githubusercontent.com
 
 #### GOOGLE.COM ##################################
-cse.google.com
 video-stats.l.google.com
+cse.google.com
 0.client-channel.google.com
 clients5.google.com
 clients4.google.com
+clients6.google.com
 clients3.google.com
 clients2.google.com
-android.clients.google.com
-clients6.google.com
-appsbackup-pa.clients6.google.com
 clients1.google.com
+android.clients.google.com
+appsbackup-pa.clients6.google.com
 appspot-preview.l.google.com
 
 #### GOOGLEAPIS.COM ##############################
@@ -95,14 +98,14 @@ instantmessaging-pa.googleapis.com
 appsbackup-pa.googleapis.com
 
 #### GOOGLEVIDEO.COM #############################
-redirector.googlevideo.com
 manifest.googlevideo.com
+redirector.googlevideo.com
 
 #### GOTINDER.COM ################################
-api.gotinder.com
-images-ssl.gotinder.com
 data.gotinder.com
+api.gotinder.com
 preview.gotinder.com
+images-ssl.gotinder.com
 
 #### GSTATIC.COM #################################
 fonts.gstatic.com
@@ -112,44 +115,47 @@ gstatic.com
 #### JQUERY.COM ##################################
 jquery.com
 
+#### KRAKEN.COM ##################################
+kraken.com
+
 #### LIVE.COM ####################################
+login.live.com
 live.com
 nexusrules.officeapps.live.com
-login.live.com
 s.gateway.messenger.live.com
 onedrive.live.com
+outlook.live.com
 storage.live.com
 g.live.com
-outlook.live.com
 
 #### LIVE.NET ####################################
 skyapi.live.net
 docs.live.net
 
 #### MICROSOFT.COM ###############################
-continuum.dds.microsoft.com
 officeclient.microsoft.com
+continuum.dds.microsoft.com
 win10.ipv6.microsoft.com
-displaycatalog.mp.microsoft.com
-dl.delivery.mp.microsoft.com
-mobile.pipe.aria.microsoft.com
-settings-win.data.microsoft.com
-self.events.data.microsoft.com
-functional.events.data.microsoft.com
 storeedgefd.dsx.mp.microsoft.com
+mobile.pipe.aria.microsoft.com
+self.events.data.microsoft.com
+displaycatalog.mp.microsoft.com
+functional.events.data.microsoft.com
 geo-prod.do.dsp.mp.microsoft.com
 xbox.ipv6.microsoft.com
+dl.delivery.mp.microsoft.com
+settings-win.data.microsoft.com
 
 #### MICROSOFTONLINE.COM #########################
-login.microsoftonline.com
 microsoftonline.com
+login.microsoftonline.com
 
 #### MSFTCONNECTTEST.COM #########################
 msftconnecttest.com
 
 #### MSFTNCSI.COM ################################
-msftncsi.com
 dns.msftncsi.com
+msftncsi.com
 
 #### OFFICE.COM ##################################
 substrate.office.com
@@ -161,12 +167,12 @@ hubblecontent.osi.office.net
 office.net
 
 #### OFFICE365.COM ###############################
-outlook.office365.com
 office365.com
+outlook.office365.com
 
 #### ONEDRIVE.COM ################################
-onedrive.com
 api.onedrive.com
+onedrive.com
 
 #### PHNCDN.COM ##################################
 di.phncdn.com
@@ -178,22 +184,26 @@ pool.pm
 #### POOLTOOL.IO #################################
 pooltool.io
 
+#### PORNHUB.COM #################################
+pornhub.com
+de.pornhub.com
+
 #### S-MICROSOFT.COM #############################
-c.s-microsoft.com
 store-images.s-microsoft.com
+c.s-microsoft.com
 
 #### SFX.MS ######################################
-oneclient.sfx.ms
 p.sfx.ms
+oneclient.sfx.ms
 
 #### SKYPE.COM ###################################
+pricelist.skype.com
 apps.skype.com
 ui.skype.com
-pricelist.skype.com
 
 #### SPOTIFY.COM #################################
-spclient.wg.spotify.com
 spotify.com
+spclient.wg.spotify.com
 
 #### SPOTIFYCDN.NET ##############################
 spotifycdn.net
@@ -212,22 +222,22 @@ whatsapp.com
 web.whatsapp.com
 
 #### WHATSAPP.NET ################################
-whatsapp.net
-static.whatsapp.net
-chat.cdn.whatsapp.net
 media-muc2-1.cdn.whatsapp.net
+static.whatsapp.net
+g.whatsapp.net
 media-vie1-1.cdn.whatsapp.net
 pps.whatsapp.net
-g.whatsapp.net
+whatsapp.net
+chat.cdn.whatsapp.net
 
 #### WINDOWSUPDATE.COM ###########################
 ctldl.windowsupdate.com
 
 #### XHCDN.COM ###################################
-thumb-lvlt.xhcdn.com
 thumb-user.xhcdn.com
-static-lvlt.xhcdn.com
 pornstar-thumb.xhcdn.com
+static-lvlt.xhcdn.com
+thumb-lvlt.xhcdn.com
 
 #### YOUPORN.COM #################################
 youporn.com
