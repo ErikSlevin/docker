@@ -3,7 +3,7 @@
 </p>
 
 # TasmoAdmin
-Mit TasmoAdmin kann man all seine Geräte mit Tasmota Firmware über ein zentrales Webinterface verwalten.
+Geräte mit Tasmota Firmware über ein zentrales Webinterface verwalten.
 
 ## Quellen:
 * [https://github.com/TasmoAdmin/TasmoAdmin](https://github.com/TasmoAdmin/TasmoAdmin)
