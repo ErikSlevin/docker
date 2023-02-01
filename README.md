@@ -9,6 +9,8 @@
 * [phpmyadmin](https://github.com/ErikSlevin/docker/tree/main/phpmyadmin): Frontend für die Administration von MySQL-Datenbanken 
 * [pi-hole](https://github.com/ErikSlevin/docker/tree/main/pi-hole): Seldhosted Werbeblocker für das Heimnetzwerk.
 * [snowflake](https://github.com/ErikSlevin/docker/tree/main/snowflake): Tor-Proxy: ermöglicht Menschen, trotz Netzsperren auf das Internet zuzugreifen
+* [tandoor](https://github.com/ErikSlevin/docker/tree/main/tandoor): Selbstverwaltete Online-Rezeptdatenbank, die Wochenpläne erzeugt, Einkaufslisten generiert und die Rezepte mit Freunden und Familie teilt.
+* [tasmoadmin](https://github.com/ErikSlevin/docker/tree/main/tasmoadmin): Mit TasmoAdmin kann man all seine Geräte mit Tasmota Firmware über ein zentrales Webinterface verwalten.
 * [traefik](https://github.com/ErikSlevin/docker/tree/main/traefik): Reverse-Proxy und Load-Balancer
 * [uptime-kuma](https://github.com/ErikSlevin/docker/tree/main/uptime-kuma): Self-Hosted Monitoring Tool
 * [valtwarden](https://github.com/ErikSlevin/docker/tree/main/valtwarden): Selfhosted Passwort-Tresor mit Zugriff von Unterwegs!
