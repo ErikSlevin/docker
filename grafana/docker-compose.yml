@@ -8,7 +8,7 @@ services:
     hostname: grafana
     
     ports:
-      - 9040:3000 
+      - $GRAFANA_PORT:3000 
             
     volumes:
       - grafana-data:/var/lib/grafana                                         # Dashboards etc.

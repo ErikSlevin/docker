@@ -7,7 +7,7 @@ services:
     hostname: uptime-kuma
     
     ports:
-      - 9070:3001
+      - $UPTIME_PORT:3001
 
     volumes:
       - uptime-kuma:/app/data

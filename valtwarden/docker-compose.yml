@@ -8,7 +8,7 @@ services:
     hostname: valtwarden
     
     ports:
-      - 9020:80 
+      - $VALTWARDEN_PORT:80 
             
     volumes:
       - valtwarden:/data

@@ -7,7 +7,7 @@ services:
     hostname: gotify
 
     ports:
-      - 9060:80
+      - $GOTIFY_PORT:80
       
     environment:
       - TZ=$TIMEZONE                          # Zeitzone
