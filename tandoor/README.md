@@ -3,7 +3,7 @@
 </p>
 
 # Tandoor
-Selbstverwaltete Online-Rezeptdatenbank, die Wochenpläne erzeugt, Einkaufslisten generiert und die Rezepte mit Freunden und Familie teilt.
+Selbstverwaltete Online-Rezeptdatenbank, die Wochenpläne erzeugt, Einkaufslisten generiert.
 
 ## Untare
 Unofficial Tandoor Recipes App
