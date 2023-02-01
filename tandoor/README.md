@@ -5,6 +5,12 @@
 # Tandoor
 Selbstverwaltete Online-Rezeptdatenbank, die Wochenpläne erzeugt, Einkaufslisten generiert und die Rezepte mit Freunden und Familie teilt.
 
+## Untare
+Unofficial Tandoor Recipes App
+* [https://github.com/phantomate/Untare](https://github.com/phantomate/Untare)
+
+
 ## Quellen:
 * [https://docs.tandoor.dev/](https://docs.tandoor.dev/)
 * [https://linuxnews.de/2022/02/01/tandoor-recipes-rezept-manager/](https://linuxnews.de/2022/02/01/tandoor-recipes-rezept-manager/)
+* [https://github.com/phantomate/Untare](https://github.com/phantomate/Untare)
