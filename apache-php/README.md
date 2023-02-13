@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://containrrr.dev/watchtower/"><img src="https://containrrr.dev/watchtower/images/logo-450px.png" width="250" alt="Watchtower"></a><br/>
+<a href="https://containrrr.dev/watchtower/"><img src="media/apache.png" width="250" alt="Watchtower"></a><br/>
 </p>
 
 # Apache + PHP
