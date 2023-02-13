@@ -17,6 +17,7 @@ services:
     - WATCHTOWER_TIMEOUT=30s                                            # 30s Timeout
     - WATCHTOWER_INCLUDE_RESTARTING=true                                # Nach Aktualisierung Container neustarten
     - WATCHTOWER_ROLLING_RESTART=true                                   # Container nacheinander statt gleichzeitig herrunter fahren
+    - WATCHTOWER_LIFECYCLE_HOOK=true                                    # erlaubt das Ausführen von Skripts vor oder nach dem Updaten des Containers
 
     # Gotify
     - WATCHTOWER_NOTIFICATIONS=gotify                                   # Gotify als Push-Benachrichtigngsdienst
@@ -26,7 +27,7 @@ services:
     
 
     labels:
-      # Watchtower - Container automatisch aktualisieren
-      - "com.centurylinklabs.watchtower.enable=true"
-  
+      # Watchtower - Container automatisch überwachen, melden wenn neue Version verfügbar ist
+      - "com.centurylinklabs.watchtower.monitor-only=true"
+
     restart: always
