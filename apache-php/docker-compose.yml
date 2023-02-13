@@ -1,0 +1,24 @@
+version: "3"
+services:
+  apache:
+    image: php:8.2-apache-bullseye
+
+    container_name: apache
+    hostname: apache
+
+    ports:
+      - $apache_PORT:80
+
+    volumes:
+      - apache:/var/www/html
+
+    labels:
+      # Watchtower - Container automatisch aktualisieren
+      - "com.centurylinklabs.watchtower.enable=true"
+      - "com.centurylinklabs.watchtower.lifecycle.post-update=/home/mysqli.sh"  # mysqli Abhängigkeiten installieren 
+  
+    restart: always
+
+volumes:
+  apache:
+    name: apache
