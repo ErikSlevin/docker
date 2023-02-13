@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://containrrr.dev/watchtower/"><img src="media/apache.png" width="250" alt="Watchtower"></a><br/>
+<a href="https://hub.docker.com/_/httpd"><img src="media/apache.png" width="200"><img style="margin-left:4em" src="media/php.png" width="100"></a><br/>
 </p>
 
 # Apache + PHP
