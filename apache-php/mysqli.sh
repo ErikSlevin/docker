@@ -10,5 +10,8 @@ else
     # Installieren des mysqli-Erweiterungsmoduls
     docker exec -it apache bash -c 'docker-php-ext-install mysqli'
     docker exec -it apache bash -c 'docker-php-ext-enable mysqli'
+
+    # Neustart von Apache
+    docker exec -it apache bash -c 'service apache2 restart'
     echo "${datetime}: Das mysqli-Erweiterungsmodul wurde erfolgreich installiert und aktiviert."
 fi
