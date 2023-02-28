@@ -15,7 +15,7 @@ services:
     labels:
       # Watchtower - Container automatisch aktualisieren
       - "com.centurylinklabs.watchtower.enable=true"
-      - "com.centurylinklabs.watchtower.lifecycle.post-update=/home/mysqli.sh"  # mysqli Abhängigkeiten installieren 
+      - "com.centurylinklabs.watchtower.lifecycle.post-update=/home/erik/skripts/mysqli.sh"  # mysqli Abhängigkeiten installieren 
   
     restart: always
 
