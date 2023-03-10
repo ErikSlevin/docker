@@ -11,9 +11,10 @@ docker-php-ext-install mysqli
 ```
 
 Damit nach einer Container aktualisierung das Moduk `mysqli` vorhanden ist, folgenden crontab setzen:
-```15 1 */1 * * /home/erik/skripts/mysqli.sh >> /home/erik/logs/mysqli.sh.log 2>&1```
 
-`mysqli.sh` auf dem Host unter `/home/<USERNAME>/skripts/` ablegen. 
+* `15 1 */1 * * /home/erik/skripts/mysqli.sh >> /home/erik/logs/mysqli.sh.log 2>&1`
+* `mysqli.sh` auf dem Host unter `/home/<USERNAME>/skripts/` ablegen. 
+
 ```shell
 #!/bin/bash
 
