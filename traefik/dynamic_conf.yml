@@ -20,9 +20,40 @@ http:
         browserXssFilter: true
         contentTypeNosniff: true
         frameDeny: true
-        sslRedirect: true
-        #HSTS Configuration
+        # sslRedirect: true
+        # HSTS Configuration
         stsIncludeSubdomains: true
         stsPreload: true
         stsSeconds: 31536000
         customFrameOptionsValue: "SAMEORIGIN"
+  
+  routers:
+    dsm:
+      entryPoints:
+        - https
+      rule: "Host(`xxxxxxxxx.xxxxxxxxxxxx.com`)"
+      service: dsm
+      tls:
+        certResolver: http
+
+    file:
+      entryPoints:
+        - https
+      rule: "Host(`xxxxxxxxx.xxxxxxxxxxxx.com`)"
+      service: file
+      tls:
+        certResolver: http
+
+    
+  services:
+    dsm:
+      loadBalancer:
+        passHostHeader: true
+        servers:
+        - url: "https://xxx.xxx.xxx.xxx:xxxx"
+
+    file:
+      loadBalancer:
+        passHostHeader: true
+        servers:
+        - url: "https://xxx.xxx.xxx.xxx:xxxx"
