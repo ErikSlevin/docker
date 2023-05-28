@@ -13,8 +13,6 @@ services:
       
     environment:
       - TZ=$TIMEZONE                        # Zeitzone
-      - FTLCONF_REPLY_ADDR4=$HOST           # IP-Adresse vom Host
-      - VIRTUAL_HOST=$HOST                  # IP-Adresse vom Host
       - ADMIN_EMAIL=$EMAIL                  # Administrator E-Mail
       - PIHOLE_DNS_=1.1.1.1;1.0.0.1         # DNS Auflösung via Cloudflair 
       - WEBTHEME=default-dark               # Dark-Modus in der UI
