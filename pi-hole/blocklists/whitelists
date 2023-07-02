@@ -1,8 +1,8 @@
 ####################################################################################################
 #### WHITELISTS ####################################################################################
-#### Released: 01.02.2023 at 21:42
+#### Released: 02.07.2023 at 21:03
 ####
-#### Count: 128 Domains von 54 Anbietern.
+#### Count: 134 Domains von 51 Anbietern.
 ####
 #### GitHub: https://github.com/ErikSlevin
 #### Repository: https://github.com/ErikSlevin/docker/tree/main/pi-hole/
@@ -10,238 +10,239 @@
 #### Copyright Erik Slevin #########################################################################
 ####################################################################################################
 
-#### 1DRV.COM ####################################
+#### 1DRV
 1drv.com
-
-#### 1DRV.MS #####################################
 1drv.ms
 
-#### AKAMAIHD.NET ################################
+#### AKAMAIHD
 akamaihd.net
 
-#### AKAMAITECHNOLOGIES.COM ######################
+#### AKAMAITECHNOLOGIES
 akamaitechnologies.com
 
-#### AKAMAIZED.NET ###############################
-audio-ak-spotify-com.akamaized.net
-heads-ak-spotify-com.akamaized.net
+#### AKAMAIZED
 akamaized.net
-img-s-msn-com.akamaized.net
-audio4-ak-spotify-com.akamaized.net
-spotify-com.akamaized.net
+audio-ak-spotify-com.akamaized.net
 audio-akp-bbr-spotify-com.akamaized.net
+audio4-ak-spotify-com.akamaized.net
+heads-ak-spotify-com.akamaized.net
+img-s-msn-com.akamaized.net
 lastfm-img2.akamaized.net
+spotify-com.akamaized.net
 
-#### AMAZONAWS.COM ###############################
+#### AMAZONAWS
 amazonaws.com
 s3.amazonaws.com
 
-#### ANDROID.COM #################################
+#### ANDROID
 connectivitycheck.android.com
 
-#### APPCENTER.MS ################################
+#### APPCENTER
 in.appcenter.ms
 
-#### APPLE.COM ###################################
+#### APPLE
 appleid.apple.com
 ocsp.apple.com
 
-#### BADOO.COM ###################################
+#### BADOO
 badoo.com
 
-#### BINANCE.COM #################################
+#### BINANCE
 accounts.binance.com
 binance.com
 
-#### BUMBLE.COM ##################################
+#### BUMBLE
 bumble.com
 
-#### CLOUDFLARE.COM ##############################
+#### CLOUDFLARE
+cdn.cloudflare.net
 cdnjs.cloudflare.com
 
-#### CLOUDFLARE.NET ##############################
-cdn.cloudflare.net
-
-#### CLOUDFRONT.NET ##############################
+#### CLOUDFRONT
 d2c8v52ll5s99u.cloudfront.net
 d2gatte9o95jao.cloudfront.net
 
-#### COINMARKETCAP.COM ###########################
+#### COINMARKETCAP
 coinmarketcap.com
 
-#### GEFORCE.COM #################################
+#### EIS
+eis.de
+
+#### GEFORCE
 gfwsl.geforce.com
 
-#### GITHUB.COM ##################################
+#### GITHUB
 github.com
-
-#### GITHUB.IO ###################################
 github.io
 
-#### GITHUBUSERCONTENT.COM #######################
+#### GITHUBUSERCONTENT
 raw.githubusercontent.com
 
-#### GOOGLE.COM ##################################
-video-stats.l.google.com
-translate.google.com
-cse.google.com
+#### GOOGLE
 0.client-channel.google.com
-clients6.google.com
+android.clients.google.com
+appsbackup-pa.clients6.google.com
 appspot-preview.l.google.com
 clients1.google.com
-android.clients.google.com
-clients3.google.com
 clients2.google.com
-appsbackup-pa.clients6.google.com
-clients5.google.com
+clients3.google.com
 clients4.google.com
+clients5.google.com
+clients6.google.com
+cse.google.com
+news.google.com
+news.google.de
+play.google.com
+translate.google.com
+video-stats.l.google.com
 
-#### GOOGLEAPIS.COM ##############################
+#### GOOGLEAPIS
 appsbackup-pa.googleapis.com
-instantmessaging-pa.googleapis.com
 googleapis.com
+instantmessaging-pa.googleapis.com
 
-#### GOOGLEVIDEO.COM #############################
-redirector.googlevideo.com
+#### GOOGLEVIDEO
 manifest.googlevideo.com
+redirector.googlevideo.com
 
-#### GOTINDER.COM ################################
-data.gotinder.com
+#### GOTINDER
 api.gotinder.com
-preview.gotinder.com
+data.gotinder.com
 images-ssl.gotinder.com
+preview.gotinder.com
 
-#### GSTATIC.COM #################################
-gstatic.com
+#### GSTATIC
 connectivitycheck.gstatic.com
 fonts.gstatic.com
+gstatic.com
 
-#### JQUERY.COM ##################################
+#### JQUERY
 jquery.com
 
-#### KRAKEN.COM ##################################
+#### KRAKEN
 kraken.com
 
-#### LIVE.COM ####################################
-outlook.live.com
-nexusrules.officeapps.live.com
-login.live.com
-live.com
-s.gateway.messenger.live.com
-onedrive.live.com
+#### LIVE
+docs.live.net
 g.live.com
+live.com
+login.live.com
+nexusrules.officeapps.live.com
+onedrive.live.com
+outlook.live.com
+s.gateway.messenger.live.com
+skyapi.live.net
 storage.live.com
 
-#### LIVE.NET ####################################
-skyapi.live.net
-docs.live.net
+#### LOVOO
+de.lovoo.com
 
-#### MICROSOFT.COM ###############################
+#### MICROSOFT
+continuum.dds.microsoft.com
+displaycatalog.mp.microsoft.com
+dl.delivery.mp.microsoft.com
+functional.events.data.microsoft.com
+geo-prod.do.dsp.mp.microsoft.com
 mobile.pipe.aria.microsoft.com
 officeclient.microsoft.com
-continuum.dds.microsoft.com
-win10.ipv6.microsoft.com
-displaycatalog.mp.microsoft.com
-storeedgefd.dsx.mp.microsoft.com
-geo-prod.do.dsp.mp.microsoft.com
-xbox.ipv6.microsoft.com
 self.events.data.microsoft.com
 settings-win.data.microsoft.com
-functional.events.data.microsoft.com
-dl.delivery.mp.microsoft.com
+storeedgefd.dsx.mp.microsoft.com
+win10.ipv6.microsoft.com
+xbox.ipv6.microsoft.com
 
-#### MICROSOFTONLINE.COM #########################
-microsoftonline.com
+#### MICROSOFTONLINE
 login.microsoftonline.com
+microsoftonline.com
 
-#### MSFTCONNECTTEST.COM #########################
+#### MSFTCONNECTTEST
 msftconnecttest.com
 
-#### MSFTNCSI.COM ################################
-msftncsi.com
+#### MSFTNCSI
 dns.msftncsi.com
+msftncsi.com
 
-#### OFFICE.COM ##################################
-office.com
-substrate.office.com
-products.office.com
-
-#### OFFICE.NET ##################################
-office.net
+#### OFFICE
 hubblecontent.osi.office.net
+office.com
+office.net
+products.office.com
+substrate.office.com
 
-#### OFFICE365.COM ###############################
+#### OFFICE365
 office365.com
 outlook.office365.com
 
-#### ONEDRIVE.COM ################################
+#### ONEDRIVE
 api.onedrive.com
 onedrive.com
 
-#### PHNCDN.COM ##################################
-di.phncdn.com
+#### PHNCDN
 cdn1d-static-shared.phncdn.com
+di.phncdn.com
 
-#### POOL.PM #####################################
+#### POOL
 pool.pm
 
-#### POOLTOOL.IO #################################
+#### POOLTOOL
 pooltool.io
 
-#### PORNHUB.COM #################################
-pornhub.com
+#### PORNHUB
 de.pornhub.com
+pornhub.com
 
-#### S-MICROSOFT.COM #############################
+#### S-MICROSOFT
 c.s-microsoft.com
 store-images.s-microsoft.com
 
-#### SFX.MS ######################################
-p.sfx.ms
+#### SFX
 oneclient.sfx.ms
+p.sfx.ms
 
-#### SKYPE.COM ###################################
-ui.skype.com
+#### SKYPE
 apps.skype.com
 pricelist.skype.com
+ui.skype.com
 
-#### SPOTIFY.COM #################################
-spotify.com
+#### SPOTIFY
 spclient.wg.spotify.com
+spotify.com
 
-#### SPOTIFYCDN.NET ##############################
+#### SPOTIFYCDN
 spotifycdn.net
 
-#### UI.COM ######################################
+#### UI
 ping.ui.com
 
-#### VISUALSTUDIO.COM ############################
+#### VISUALSTUDIO
 dc.services.visualstudio.com
 
-#### W3SCHOOLS.COM ###############################
+#### W3SCHOOLS
 w3schools.com
 
-#### WHATSAPP.COM ################################
-whatsapp.com
-web.whatsapp.com
-
-#### WHATSAPP.NET ################################
-media-muc2-1.cdn.whatsapp.net
-static.whatsapp.net
+#### WHATSAPP
 chat.cdn.whatsapp.net
-media-vie1-1.cdn.whatsapp.net
 g.whatsapp.net
+media-muc2-1.cdn.whatsapp.net
+media-vie1-1.cdn.whatsapp.net
 pps.whatsapp.net
+static.whatsapp.net
+web.whatsapp.com
+whatsapp.com
 whatsapp.net
 
-#### WINDOWSUPDATE.COM ###########################
+#### WINDOWSUPDATE
 ctldl.windowsupdate.com
 
-#### XHCDN.COM ###################################
-thumb-user.xhcdn.com
-thumb-lvlt.xhcdn.com
-static-lvlt.xhcdn.com
+#### XHCDN
 pornstar-thumb.xhcdn.com
+static-lvlt.xhcdn.com
+thumb-lvlt.xhcdn.com
+thumb-user.xhcdn.com
 
-#### YOUPORN.COM #################################
+#### XIAOMI
+sdkconfig.ad.xiaomi.com
+
+#### YOUPORN
 youporn.com
+
