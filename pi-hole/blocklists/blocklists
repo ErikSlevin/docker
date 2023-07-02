@@ -1,9 +1,8 @@
-
 ####################################################################################################
 #### BLOCKLISTS ####################################################################################
-#### Released: 01.02.2023 at 21:42
+#### Released: 03.07.2023 at 00:35
 ####
-#### Count: 24.332.489 Domains in 98 Lists.
+#### Count: 26.449.100 Domains (8.638.423 unique) in 99 Adlists in 13 Categories.
 ####
 #### GitHub: https://github.com/ErikSlevin
 #### Repository: https://github.com/ErikSlevin/docker/tree/main/pi-hole/
@@ -11,22 +10,21 @@
 #### Copyright Erik Slevin #########################################################################
 ####################################################################################################
 
-
 ####################################################################################################
-#### 01 Diverse ####################################################################################
+#### 01 Diverse #################################################################################### 
 
 https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/multi.txt
-https://raw.githubusercontent.com/ookangzheng/dbl-oisd-nl/master/dbl.txt
 https://raw.githubusercontent.com/elliotwutingfeng/Inversion-DNSBL-Blocklists/main/Google_hostnames.txt
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/Corona-Blocklist
 https://raw.githubusercontent.com/SoftCreatR/fakerando-domains/main/all.txt
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/Fake-Science
 https://raw.githubusercontent.com/autinerd/anti-axelspringer-hosts/master/axelspringer-hosts
 https://v.firebog.net/hosts/static/w3kbl.txt
+https://raw.githubusercontent.com/ookangzheng/dbl-oisd-nl/master/dbl.txt
 
 
 ####################################################################################################
-#### 02 Jugendschutz ###############################################################################
+#### 02 Jugendschutz ############################################################################### 
 
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/pornblock1
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/pornblock2
@@ -35,16 +33,16 @@ https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/pornblock4
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/pornblock5
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/gambling
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/pornblock6
-https://blocklistproject.github.io/Lists/porn.txt
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/child-protection
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/proxies
-https://blocklistproject.github.io/Lists/gambling.txt
 https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/doh-vpn-proxy-bypass.txt
 https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/nosafesearch.txt
+https://blocklistproject.github.io/Lists/gambling.txt
+https://blocklistproject.github.io/Lists/porn.txt
 
 
 ####################################################################################################
-#### 03 Crypto #####################################################################################
+#### 03 Crypto ##################################################################################### 
 
 https://zerodot1.gitlab.io/CoinBlockerLists/hosts
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/crypto
@@ -52,14 +50,12 @@ https://blocklistproject.github.io/Lists/crypto.txt
 
 
 ####################################################################################################
-#### 04 Phishing & Domain-Squatting ################################################################
+#### 04 Phishing & Domain-Squatting ################################################################ 
 
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/DomainSquatting1
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/DomainSquatting2
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/DomainSquatting/DE/Sparkasse/Brandenburg
-https://blocklistproject.github.io/Lists/abuse.txt
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/Phishing-Angriffe
-https://blocklistproject.github.io/Lists/phishing.txt
 https://raw.githubusercontent.com/blocklistproject/Lists/master/phishing.txt
 https://phishing.army/download/phishing_army_blocklist_extended.txt
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/DomainSquatting/DE/Sparkasse/Berlin
@@ -68,15 +64,17 @@ http://phishing.mailscanner.info/phishing.bad.sites.conf
 https://raw.githubusercontent.com/hectorm/hmirror/master/data/eth-phishing-detect/list.txt
 https://raw.githubusercontent.com/namePlayer/dhl-scamlist/main/dns-blocklists/pihole-blacklist
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/DomainSquatting4
+https://blocklistproject.github.io/Lists/abuse.txt
+https://blocklistproject.github.io/Lists/phishing.txt
+https://github.com/mitchellkrogza/Phishing.Database/blob/master/phishing-domains-NEW-today.txt
 
 
 ####################################################################################################
-#### 06 Werbung ####################################################################################
+#### 06 Werbung #################################################################################### 
 
-https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/spam.mails
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/easylist
 https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/light.txt
-https://blocklistproject.github.io/Lists/ads.txt
+https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/spam.mails
 https://v.firebog.net/hosts/AdguardDNS.txt
 https://raw.githubusercontent.com/anudeepND/blacklist/master/adservers.txt
 https://v.firebog.net/hosts/Easylist.txt
@@ -85,10 +83,11 @@ https://v.firebog.net/hosts/Prigent-Ads.txt
 https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
 https://www.technoy.de/lists/blocklist.txt
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/UncheckyAds/hosts
+https://blocklistproject.github.io/Lists/ads.txt
 
 
 ####################################################################################################
-#### 07 Fakeshops und Abofallen ####################################################################
+#### 07 Fakeshops und Abofallen #################################################################### 
 
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/notserious
 https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/fake.txt
@@ -97,7 +96,7 @@ https://raw.githubusercontent.com/Monstanner/DuckDuckGo-Fakeshops-Blocklist/main
 
 
 ####################################################################################################
-#### 08 Tracking und Telemetry #####################################################################
+#### 08 Tracking und Telemetry ##################################################################### 
 
 https://www.github.developerdan.com/hosts/lists/ads-and-tracking-extended.txt
 https://raw.github.com/notracking/hosts-blocklists/master/hostnames.txt
@@ -106,47 +105,46 @@ https://raw.githubusercontent.com/AdguardTeam/cname-trackers/master/combined_dis
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt
 https://hostfiles.frogeye.fr/multiparty-trackers-hosts.txt
 https://v.firebog.net/hosts/Easyprivacy.txt
-https://blocklistproject.github.io/Lists/tracking.txt
 https://hostfiles.frogeye.fr/firstparty-trackers-hosts.txt
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.2o7Net/hosts
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/samsung
 https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
 https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/AmazonFireTV.txt
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/MS-Office-Telemetry
+https://blocklistproject.github.io/Lists/tracking.txt
 
 
 ####################################################################################################
-#### 09 Malware ####################################################################################
+#### 09 Malware #################################################################################### 
 
 https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/tif.txt
-https://blocklistproject.github.io/Lists/malware.txt
 https://raw.githubusercontent.com/blocklistproject/Lists/master/malware.txt
-https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADomains.txt
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/malware
+https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADomains.txt
 https://v.firebog.net/hosts/Prigent-Malware.txt
 https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt
 https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt
 https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Risk/hosts
+https://urlhaus.abuse.ch/downloads/hostfile/
 https://raw.githubusercontent.com/AmnestyTech/investigations/master/2021-07-18_nso/domains.txt
 https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt
-https://urlhaus.abuse.ch/downloads/hostfile/
-https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt
 https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts
 https://www.technoy.de/lists/malware2.txt
+https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt
+https://blocklistproject.github.io/Lists/malware.txt
 
 
 ####################################################################################################
-#### 10 Pi-hole Standardlisten #####################################################################
+#### 10 Pi-hole Standardlisten ##################################################################### 
 
 https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
 
 
 ####################################################################################################
-#### 11 Einzelne Dienste ###########################################################################
+#### 11 Einzelne Dienste ########################################################################### 
 
 https://www.github.developerdan.com/hosts/lists/dating-services-extended.txt
-https://blocklistproject.github.io/Lists/adobe.txt
 https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt
 https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt
 https://raw.githubusercontent.com/wlqY8gkVb9w1Ck5MVD4lBre9nWJez8/W10TelemetryBlocklist/master/W10TelemetryBlocklist
@@ -154,22 +152,24 @@ https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/android-tracki
 https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten/Win10Telemetry
 https://raw.githubusercontent.com/ChefTyler/MiscHostsFiles/master/ChanBlocker.txt
 https://raw.githubusercontent.com/bloodhunterd/pi-hole-blocklists/master/Twitch.txt
+https://blocklistproject.github.io/Lists/adobe.txt
 
 
 ####################################################################################################
-#### 12 Ransomware #################################################################################
+#### 12 Ransomware ################################################################################# 
 
-https://blocklistproject.github.io/Lists/ransomware.txt
 https://raw.githubusercontent.com/blocklistproject/Lists/master/ransomware.txt
+https://blocklistproject.github.io/Lists/ransomware.txt
 
 
 ####################################################################################################
-#### 13 Betrug #####################################################################################
+#### 13 Betrug ##################################################################################### 
 
 https://blocklistproject.github.io/Lists/fraud.txt
 
 
 ####################################################################################################
-#### 14 Weiterleitung ##############################################################################
+#### 14 Weiterleitung ############################################################################## 
 
 https://blocklistproject.github.io/Lists/redirect.txt
+
