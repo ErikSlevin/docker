@@ -133,6 +133,11 @@ if ($downloadedFile) {
 
     $groupedData = $extractedData | Group-Object -Property Comment
 
+    $groupedWeb = $extractedData | Sort-Object Comment, Address -Descending
+
+
+
+
     #$separator = "#" * 100
     $lineBreaks = "`n"
 
@@ -174,3 +179,61 @@ if ($downloadedFile) {
 } else {
     Write-Host "Keine Datei mit dem Muster '*pihole-backup.tar.gz' gefunden."
 }
+
+$lastUpdated = Get-Date -Format "dd.MM.yyyy 'um' HH:mm 'Uhr'"
+$totalDomains = ($extractedData | Measure-Object -Property Number -Sum).Sum
+$totalLists = $extractedData.Count
+
+# Generiere die Übersicht
+$output = "# Pihole Blocklisten"
+$output += "`n"
+$output += "zuletzt aktualisiert: $lastUpdated"
+$output += "`n"
+$output += "`n"
+$output += "$($totalNumber.ToString("#,###")) Domains ($($totalBlockedDomains.ToString("#,###")) Unique) in $($jsonData.Count) AdListen in $($groupedData.Count) Kategorien."
+$output += "`n"
+$output += ">*Eigene Sammlung, großteils von [RPiList](https://github.com/RPiList/specials/blob/master/Blocklisten.md) (YT: [SemperVideo](https://www.youtube.com/@SemperVideo)) - Vielen Dank*"
+$output += "`n"
+$output += "`n"
+
+$commentGroups = $extractedData | Group-Object -Property Comment
+
+foreach ($group in $commentGroups) {
+    $comment = $group.Name
+    $lists = $group.Group | Sort-Object -Property Number -Descending
+    $groupDomains = ($lists | Measure-Object -Property Number -Sum).Sum
+
+    $output += "## $comment"
+    $output += "`n"
+    $output += "> $($lists.Count) $(If ($lists.Count -eq 1) { 'Liste' } Else { 'Listen' }) mit {0:N0} Domains - [Copy & Paste Link](https://raw.githubusercontent.com/ErikSlevin/docker/main/pi-hole/blocklists/blocklists)" -f $groupDomains
+    $output += "`n"
+    $output += "`n"
+
+    $output += "|Domains|Adresse|"
+    $output += "`n"
+    $output += "|--:|:--|"
+
+    foreach ($list in $lists) {
+        $address = $list.Address
+        $number = $list.Number
+
+        # Kürze die Adresse auf maximal 80 Zeichen
+        if ($address.Length -gt 80) {
+            $beschreibung = $address.Substring(0, 77) + "..."
+        } else {
+            $beschreibung = $address
+        }
+
+        # Formatieren der Nummer mit tausend Trennzeichen
+        $formattedNumber = "{0:N0}" -f $number
+
+        # Entferne eventuelle Zeilenumbrüche aus der Adresse
+        $address = $address -replace "`r`n", ""
+
+        $output += "`n|$formattedNumber|[$beschreibung]($address)|"
+    }
+
+    $output += "`n"
+}
+
+$output | Out-File -FilePath "C:\Users\erikw\Documents\GitHub\docker\pi-hole\blocklists\README.md" -Encoding UTF8
