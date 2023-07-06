@@ -64,13 +64,14 @@ if ($downloadedFile) {
 #### WHITELISTS ####################################################################################
 #### Released: $(Get-Date -Format "dd.MM.yyyy 'at' HH:mm")
 ####
-#### Count: $($sortedDomains.Count) Domains von $($sortedStammdomains.Count) Anbietern.
+#### Count: $($domains.Count) Domains von $($sortedStammdomains.Count) Anbietern.
 ####
 #### GitHub: https://github.com/ErikSlevin
 #### Repository: https://github.com/ErikSlevin/docker/tree/main/pi-hole/
 ####
 #### Copyright Erik Slevin #########################################################################
 ####################################################################################################
+
 "@
 
     # Entferne die Einrückung am Anfang jeder Zeile
@@ -132,7 +133,7 @@ if ($downloadedFile) {
 
     $groupedData = $extractedData | Group-Object -Property Comment
 
-    $separator = "#" * 100
+    #$separator = "#" * 100
     $lineBreaks = "`n"
 
     $blocklistHeader = @"
@@ -162,7 +163,7 @@ if ($downloadedFile) {
         $paddingLength = 100 - $commentLength - 6
         $padding = "#" * $paddingLength
 
-        $output = "$lineBreaks$separator`n#### $comment $padding `n$lineBreaks"
+        $output = "$lineBreaks`n#### $comment $padding `n$lineBreaks"
 
         foreach ($address in $group.Group) {
             $output += "$($address.Address)`n"
