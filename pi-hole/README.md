@@ -7,7 +7,7 @@ Seldhosted Werbeblocker für das Heimnetzwerk.
 
 ## Pihole Blockisten & Whitelisten
 
-Meine [Pi-hole Konfiguration](blocklists/) erweitere ich ständig, so dass diese perfekt für mich *persönlich* abgestimmt ist und es nicht zu einem Overblocking kommt.
+Meine [Pi-hole Konfiguration](https://github.com/ErikSlevin/blocklists) erweitere ich ständig, so dass diese perfekt für mich *persönlich* abgestimmt ist und es nicht zu einem Overblocking kommt.
 
 * Zusammenfassung
   + über 18 Millionen Domains blockiert
