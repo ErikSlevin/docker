@@ -25,4 +25,5 @@ services:
 
 networks:
   intern:
-    driver: bridge
+    external:
+      name: intern
