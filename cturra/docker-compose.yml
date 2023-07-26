@@ -14,7 +14,11 @@ services:
     environment:
       - NTP_SERVERS=time.cloudflare.com   # Zeitserver zum syncronisieren
       - LOG_LEVEL=0
+      - TZ=Europe/Berlin  
 
     labels:
       # Watchtower - Container automatisch aktualisieren
       - "com.centurylinklabs.watchtower.enable=true"
+      
+    networks:
+      - intern
