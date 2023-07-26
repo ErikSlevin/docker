@@ -22,3 +22,7 @@ services:
       
     networks:
       - intern
+
+networks:
+  intern:
+    driver: bridge
