@@ -16,9 +16,16 @@ services:
       - 9080:80
       
     labels:
-      # Watchtower - Container automatisch überwachen, melden wenn neue Version verfügbar ist
-      - "com.centurylinklabs.watchtower.monitor-only=true"
+      # Watchtower - Container automatisch aktualisieren
+      - "com.centurylinklabs.watchtower.enable=true"
+
+    networks:
+      - intern
 
 volumes:
   tasmo-admin:
     name: tasmo-admin
+
+networks:
+  intern:
+    external: true
