@@ -2,7 +2,7 @@ version: '3'
 
 services:
   heimdall:
-    image: linuxserver/heimdall:arm32v7-latest
+    image: lscr.io/linuxserver/heimdall:latest
     container_name: heimdall
     hostname: heimdall
 
