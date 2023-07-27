@@ -31,3 +31,10 @@ services:
       - "com.centurylinklabs.watchtower.monitor-only=true"
 
     restart: always
+
+    networks:
+      - intern
+    
+networks:
+  intern:
+    external: true
