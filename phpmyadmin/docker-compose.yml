@@ -25,3 +25,10 @@ services:
     labels:
       # Watchtower - Container automatisch aktualisieren
       - "com.centurylinklabs.watchtower.enable=true"
+
+    networks:
+      - intern
+      
+networks:
+  intern:
+    external: true
