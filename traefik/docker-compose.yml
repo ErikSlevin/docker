@@ -10,7 +10,7 @@ services:
       - no-new-privileges:true
 
     networks:
-      - proxy
+      - extern
 
     ports:
       - 80:80
@@ -19,9 +19,9 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /opt/containers/traefik/data/traefik.yml:/traefik.yml:ro
-      - /opt/containers/traefik/data/acme.json:/acme.json
-      - /opt/containers/traefik/data/dynamic_conf.yml:/dynamic_conf.yml
+      - /home/erik/docker/config_files/traefik/traefik.yml:/traefik.yml:ro
+      - /home/erik/docker/config_files/traefik/acme.json:/acme.json
+      - /home/erik/docker/config_files/traefik/dynamic_conf.yml:/dynamic_conf.yml
 
     labels:
       - "traefik.enable=true"
@@ -42,5 +42,5 @@ services:
       - "com.centurylinklabs.watchtower.enable=true"
 
 networks:
-  proxy:
+  extern:
     external: true
