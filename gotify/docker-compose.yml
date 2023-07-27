@@ -34,7 +34,7 @@ services:
       - "traefik.http.routers.gotify-secure.tls.certresolver=http"
       - "traefik.http.routers.gotify-secure.service=gotify"
       - "traefik.http.services.gotify.loadbalancer.server.port=80"
-      - "traefik.docker.network=proxy"
+      - "traefik.docker.network=extern"
 
       # Watchtower - Container automatisch aktualisieren
       - "com.centurylinklabs.watchtower.enable=true"
