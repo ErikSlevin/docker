@@ -10,8 +10,8 @@ services:
 
     volumes:
      - /sessions
-     - ~/docker/phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
-     - /custom/phpmyadmin/theme/:/www/themes/theme/
+     - /home/erik/docker/config_files/phpmyadmin/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+     - /home/erik/docker/config_files/phpmyadmin/theme/:/www/themes/theme/
 
     environment:
       PMA_HOST: $HOST                     # Datenbank IP-Adresse
@@ -20,7 +20,7 @@ services:
       PMA_USER: root                      # Datenbank User
 
     ports:
-      - $PHPMYADMIN_PORT:80
+      - 9050:80
 
     labels:
       # Watchtower - Container automatisch aktualisieren
