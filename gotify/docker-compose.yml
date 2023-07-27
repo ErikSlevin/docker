@@ -7,7 +7,7 @@ services:
     hostname: gotify
 
     ports:
-      - $GOTIFY_PORT:80
+      - 9060:80
       
     environment:
       - TZ=$TIMEZONE                          # Zeitzone
@@ -19,7 +19,7 @@ services:
       - gotify:/app/data
 
     networks:
-      - proxy
+      - extern
 
     labels:
       # Traefik
@@ -42,7 +42,7 @@ services:
     restart: always
 
 networks:
-  proxy:
+  extern:
     external: true
 
 volumes:
