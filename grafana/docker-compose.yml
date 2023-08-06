@@ -23,7 +23,7 @@ services:
     restart: always
 
     networks:
-      - proxy
+      - extern
 
     labels:
       # Traefik
@@ -38,13 +38,13 @@ services:
       - "traefik.http.routers.grafana-secure.tls.certresolver=http"
       - "traefik.http.routers.grafana-secure.service=grafana"
       - "traefik.http.services.grafana.loadbalancer.server.port=3000"
-      - "traefik.docker.network=proxy"
+      - "traefik.docker.network=extern"
 
       # Watchtower - Container automatisch aktualisieren
       - "com.centurylinklabs.watchtower.enable=true"
 
 networks:
-  proxy:
+  extern:
     external: true
 
 volumes:
