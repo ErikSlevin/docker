@@ -19,6 +19,8 @@ services:
       - GF_SECURITY_ADMIN_USER=$GRAFANA_USER                                  # Benutzername
       - GF_SECURITY_ADMIN_PASSWORD=$GRAFANA_PASSWORD                          # Passwort
       - GF_USERS_ALLOW_SIGN_UP=false                                          # Registrierung deaktivieren
+      - GF_AUTH_ENABLED=true
+      - GF_AUTH_API_KEY_ENABLED=true
       - GF_API_AUTH_ENABLED=true  # Aktiviert die API-Authentifizierung
       - GF_API_AUTH_API_KEY=$APITOKEN    # Ihr API-Token hier
       
