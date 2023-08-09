@@ -2,8 +2,7 @@ version: '3'
 
 services:
   heimdall:
-    image: linuxserver/heimdall:latest
-
+    image: linuxserver/heimdall:arm32v7-version-v2.5.6
     container_name: heimdall
     hostname: heimdall
 
@@ -15,13 +14,19 @@ services:
       - heimdall:/config
 
     ports:
-      - $HEIMDAL_PORT:80 
-
+      - 9010:80 
 
     labels:
       # Watchtower - Container automatisch aktualisieren
       - "com.centurylinklabs.watchtower.enable=true"
+    
+    networks:
+      - intern
 
 volumes:
   heimdall:
     name: heimdall
+
+networks:
+  intern:
+    external: true
