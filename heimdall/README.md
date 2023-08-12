@@ -20,40 +20,40 @@ Bilder-Syntax ```bild1.jpg```,```bild2.jpg``` ..
 ``` css
 /* Stil für das Loader-Element */
 #loader {
-    position: fixed; /* Positioniert das Element fixiert im Browserfenster */
-    top: 0; /* Abstand zum oberen Rand */
-    left: 0; /* Abstand zum linken Rand */
-    width: 100%; /* Volle Breite des Browserfensters */
-    height: 100%; /* Volle Höhe des Browserfensters */
-    background-color: #fff; /* Hintergrundfarbe des Loaders */
-    z-index: 9999; /* Stacking-Index, um den Loader über anderen Inhalten zu platzieren */
-    opacity: 1; /* Anfangsopazität des Loaders */
-    transition: opacity 0.5s ease-in-out; /* Übergang der Opazität mit 0.5 Sekunden Dauer und Easing */
+    position: fixed;                        /* Positioniert das Element fixiert im Browserfenster */
+    top: 0;                                 /* Abstand zum oberen Rand */
+    left: 0;                                /* Abstand zum linken Rand */
+    width: 100%;                            /* Volle Breite des Browserfensters */
+    height: 100%;                           /* Volle Höhe des Browserfensters */
+    background-color: #fff;                 /* Hintergrundfarbe des Loaders */
+    z-index: 9999;                          /* Stacking-Index, um den Loader über anderen Inhalten zu platzieren */
+    opacity: 1;                             /* Anfangsopazität des Loaders */
+    transition: opacity 0.5s ease-in-out;   /* Übergang der Opazität mit 0.5 Sekunden Dauer und Easing */
 }
 
 /* Stil für das HTML-Element mit der ID "app" */
 #app {
-    width: 100%; /* Volle Breite des Elements */
+    width: 100%;                            /* Volle Breite des Elements */
     background-position: bottom !important; /* Position des Hintergrundbilds unten am Element */
-    background-repeat: no-repeat !important; /* Keine Wiederholung des Hintergrundbilds */
-    background-size: cover !important; /* Bildgröße anpassen, um das Element zu füllen */
-    opacity: 0; /* Anfangsopazität des Elements */
-    transition: opacity 0.5s ease-in-out; /* Übergang der Opazität mit 0.5 Sekunden Dauer und Easing */
+    background-repeat: no-repeat !important;/* Keine Wiederholung des Hintergrundbilds */
+    background-size: cover !important;      /* Bildgröße anpassen, um das Element zu füllen */
+    opacity: 0;                             /* Anfangsopazität des Elements */
+    transition: opacity 0.5s ease-in-out;   /* Übergang der Opazität mit 0.5 Sekunden Dauer und Easing */
 }
 
 /* Zeige den Inhalt nach dem Laden des Hintergrundbilds an */
 #app.loaded {
-    opacity: 1; /* Stelle die Opazität auf 1, um den Inhalt anzuzeigen */
+    opacity: 1;                             /* Stelle die Opazität auf 1, um den Inhalt anzuzeigen */
 }
 
 /* Verstecke den vertikalen Scrollbalken */
 body::-webkit-scrollbar {
-    width: 0.01em; /* Breite des Scrollbalkens */
-    background-color: transparent; /* Hintergrundfarbe des Scrollbalkens */
+    width: 0.01em;                          /* Breite des Scrollbalkens */
+    background-color: transparent;          /* Hintergrundfarbe des Scrollbalkens */
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: transparent; /* Farbe des Scrollbalken-Thumb */
+    background-color: transparent;          /* Farbe des Scrollbalken-Thumb */
 }
 
 ```
