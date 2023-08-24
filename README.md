@@ -18,5 +18,10 @@
 
 ## Backup and Restore
 
-1. docker run --rm --volumes-from heimdall -v $(pwd):/backup busybox tar cvfz /backup/2023-08-24-heimdall-backup.tar /config
-2. docker run --rm --volumes-from heimdall -v $(pwd):/home/erik busybox sh -c "cd /config && tar xvf /home/erik/2023-08-24-heimdall-backup.tar --strip 1"
+```
+docker run --rm --volumes-from heimdall -v $(pwd):/backup busybox tar cvfz /backup/2023-08-24-heimdall-backup.tar /config
+```
+
+```
+docker run --rm --volumes-from heimdall -v $(pwd):/home/erik busybox sh -c "cd /config && tar xvf /home/erik/2023-08-24-heimdall-backup.tar --strip 1"
+```
