@@ -1,0 +1,58 @@
+version: "3.9"
+services:
+  wireguard:
+    image: weejewel/wg-easy:latest 
+    container_name: wireguard 
+    hostname: wireguard 
+    
+    environment:
+      - WG_HOST=$DOMAIN  # Setzt die Umgebungsvariable WG_HOST auf den Wert von $DOMAIN
+      - PASSWORD=$PASSWORD  # Setzt die Umgebungsvariable PASSWORD auf den Wert von $PASSWORD
+      
+    volumes:
+      - wireguard:/etc/wireguard  # Verbindet das Volume 'wireguard' mit dem Container, um die WireGuard-Konfiguration zu speichern
+      
+    ports:
+      - "51820:51820/udp"  # Mapt den UDP-Port 51820 des Hosts auf den UDP-Port 51820 des Containers
+      - "51821:51821/tcp"  # Mapt den TCP-Port 51821 des Hosts auf den TCP-Port 51821 des Containers
+      
+    cap_add:
+      - NET_ADMIN  # Fügt dem Container die NET_ADMIN-Fähigkeit hinzu
+      - SYS_MODULE  # Fügt dem Container die SYS_MODULE-Fähigkeit hinzu
+      
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1  # Setzt die sysctl-Konfiguration für IPv4
+      - net.ipv4.ip_forward=1  # Aktiviert das IP-Weiterleiten auf dem Host
+
+    labels:
+      # Grundkonfiguration
+      - "traefik.enable=true" 
+      - "traefik.http.routers.wireguard.entrypoints=http" 
+      - "traefik.http.routers.wireguard.rule=Host(`wg.$DOMAIN`)"
+      - "traefik.http.middlewares.wireguard-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.wireguard.middlewares=wireguard-https-redirect"
+      - "traefik.docker.network=extern"
+
+      # HTTPS-Konfiguration
+      - "traefik.http.routers.wireguard-secure.entrypoints=https"
+      - "traefik.http.routers.wireguard-secure.service=wireguard"
+      - "traefik.http.routers.wireguard-secure.rule=Host(`wg.$DOMAIN`)"
+      - "traefik.http.services.wireguard.loadbalancer.server.port=51821"      
+      - "traefik.http.routers.wireguard-secure.tls=true"
+      - "traefik.http.routers.wireguard-secure.tls.certresolver=http"
+
+      # .htaccess Authentifizierung
+      - "traefik.http.routers.wireguard-secure.middlewares=my-auth" 
+ 
+    networks:
+      - extern
+      
+    restart: unless-stopped 
+
+volumes:
+  wireguard:
+    name: wireguard 
+
+networks:
+  extern:
+    external: true 
