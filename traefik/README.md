@@ -34,7 +34,7 @@ htpasswd -b ~/docker_files/traefik/users.file TestUser1 'SuperSecurePa$$w0rd'
 htpasswd -b ~/docker_files/traefik/users.file TestUser2 'SuperSecurePa$$w0rd'
 htpasswd -b ~/docker_files/traefik/users.file TestUser3 'SuperSecurePa$$w0rd'
 ```
-> [`dynamic_conf.yml`](dynamic_conf.yml) [`traefik.yml`](traefik.yml)
+> [`docker-compose.yml`](docker-compose.yml) [`dynamic_conf.yml`](dynamic_conf.yml) [`traefik.yml`](traefik.yml)
 
 ## Quellen
 * [*Traefik v2 – Reverse-Proxy mit CrowdSec einrichten*](https://goneuland.de/traefik-v2-reverse-proxy-mit-crowdsec-einrichten/#more-13529)
