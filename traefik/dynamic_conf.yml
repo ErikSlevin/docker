@@ -1,7 +1,14 @@
+
+# Konfiguration für Traefik 2
+
+# TLS-Konfiguration
 tls:
   options:
     default:
+      # Minimale unterstützte TLS-Version auf TLS 1.2 setzen
       minVersion: VersionTLS12
+
+      # Unterstützte Cipher-Suiten für die Verschlüsselung festlegen
       cipherSuites:
         - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
         - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
@@ -9,51 +16,39 @@ tls:
         - TLS_AES_128_GCM_SHA256
         - TLS_AES_256_GCM_SHA384
         - TLS_CHACHA20_POLY1305_SHA256
+
+      # Bevorzugte elliptische Kurven (Elliptic Curves) für die Verschlüsselung festlegen
       curvePreferences:
         - CurveP521
         - CurveP384
+
+      # Aktivierung der SNI-Striktheit (Server Name Indication)
       sniStrict: true
+
+# HTTP-Konfiguration
 http:
   middlewares:
     secHeaders:
+      # Middleware für Sicherheitsheader
       headers:
+        # Aktivierung des XSS-Filters im Browser
         browserXssFilter: true
+
+        # Zwangsumschreiben des Content-Type-Headers, um MIME-Sniffing-Angriffe zu verhindern
         contentTypeNosniff: true
+
+        # Aktivierung des X-Frame-Options-Headers, um Klickjacking-Angriffe zu verhindern
         frameDeny: true
+
+        # (auskommentiert) Option zur SSL-Weiterleitung (kann bei Bedarf aktiviert werden)
         # sslRedirect: true
-        # HSTS Configuration
-        stsIncludeSubdomains: true
-        stsPreload: true
+
+        # HSTS-Konfiguration (HTTP Strict Transport Security)
+        stsIncludeSubdomains: true  # Aktivierung von HSTS für alle Subdomains
+        stsPreload: true  # Aktivierung des HSTS Preload-Flags
+
+        # HSTS-Maximaldauer auf 1 Jahr (in Sekunden) setzen
         stsSeconds: 31536000
+
+        # Setzen des X-Frame-Options-Custom-Headers auf "SAMEORIGIN"
         customFrameOptionsValue: "SAMEORIGIN"
-  
-  routers:
-    dsm:
-      entryPoints:
-        - https
-      rule: "Host(`xxxxxxxxx.xxxxxxxxxxxx.com`)"
-      service: dsm
-      tls:
-        certResolver: http
-
-    file:
-      entryPoints:
-        - https
-      rule: "Host(`xxxxxxxxx.xxxxxxxxxxxx.com`)"
-      service: file
-      tls:
-        certResolver: http
-
-    
-  services:
-    dsm:
-      loadBalancer:
-        passHostHeader: true
-        servers:
-        - url: "https://xxx.xxx.xxx.xxx:xxxx"
-
-    file:
-      loadBalancer:
-        passHostHeader: true
-        servers:
-        - url: "https://xxx.xxx.xxx.xxx:xxxx"

@@ -6,36 +6,54 @@ services:
     hostname: traefik
     restart: always
 
+    # Sicherheitsoptionen: keine neuen Privilegien für den Container
     security_opt:
       - no-new-privileges:true
 
+    # Verbindung zum externen Netzwerk 'extern'
     networks:
       - extern
 
+    # Port-Weiterleitung: HTTP und HTTPS
     ports:
       - 80:80
       - 443:443
 
     volumes:
+      # Zeitzone synchronisieren
       - /etc/localtime:/etc/localtime:ro
+
+      # Zugriff auf Docker-Socket für Traefik
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /home/erik/docker/config_files/traefik/traefik.yml:/traefik.yml:ro
-      - /home/erik/docker/config_files/traefik/acme.json:/acme.json
-      - /home/erik/docker/config_files/traefik/dynamic_conf.yml:/dynamic_conf.yml
+
+      # Konfigurationsdateien für Traefik
+      - /home/erik/docker_files/traefik/traefik.yml:/traefik.yml:ro
+      - /home/erik/docker_files/traefik/acme.json:/acme.json
+      - /home/erik/docker_files/traefik/dynamic_conf.yml:/dynamic_conf.yml
+      - /home/erik/docker_files/traefik/users.file:/users.file
 
     labels:
+      # Grundkonfiguration
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.entrypoints=http"
-      - "traefik.http.routers.traefik.rule=Host(`$TLD`)"                              # Ändern !
-      - "traefik.http.middlewares.traefik-auth.basicauth.users=$TRAEFIKUSER"          # Ändern !
+      - "traefik.http.routers.traefik.rule=Host(`$TLD`)"
       - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
+
+      # HTTPS-Konfiguration
       - "traefik.http.routers.traefik-secure.entrypoints=https"
-      - "traefik.http.routers.traefik-secure.rule=Host(`$TLD`)"    
+      - "traefik.http.routers.traefik-secure.rule=Host(`$TLD`)"
       - "traefik.http.routers.traefik-secure.tls=true"
       - "traefik.http.routers.traefik-secure.tls.certresolver=http"
       - "traefik.http.routers.traefik-secure.service=api@internal"
+
+      # Dynamische Konfiguration aus Datei
       - "providers.file.filename=/dynamic_conf.yml"
+
+      # Basic Authentication
+      - "traefik.http.middlewares.traefik-auth.basicauth.usersfile=/users.file"
+
+      # Middleware-Konfiguration für sichere Header und Basic Authentication
       - "traefik.http.routers.traefik-secure.middlewares=secHeaders@file,traefik-auth"
 
       # Watchtower - Container automatisch aktualisieren

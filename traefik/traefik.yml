@@ -1,37 +1,57 @@
+# Globale Konfigurationseinstellungen für Traefik
+global:
+  # Deaktiviert die Überprüfung auf neue Traefik-Versionen
+  checkNewVersion: false
+
+  # Deaktiviert die Übermittlung anonymer Nutzungsdaten
+  sendAnonymousUsage: false
+
+# API-Konfiguration
 api:
-  dashboard: true
+  # Deaktiviert das Traefik-Dashboard
+  dashboard: false
 
-log:
-  level: INFO
-
+# Konfiguration für Zugriffsprotokolle
 accessLog: {}
 
+# Einstellungen für die Einstiegspunkte (Entry Points)
 entryPoints:
+  # HTTP-Einstiegspunkt
   http:
     address: ":80"
     http:
+      # Konfiguration für Weiterleitungen
       redirections:
         entryPoint:
           to: https
           scheme: https
 
+  # HTTPS-Einstiegspunkt
   https:
     address: ":443"
 
+# Konfiguration der Datenquellen (Providers) für Traefik
 providers:
+  # Docker-Provider
   docker:
     endpoint: "unix:///var/run/docker.sock"
     exposedByDefault: false
+
+  # Datei-Provider, verwendet die dynamic_conf.yml-Datei
   file:
     filename: "./dynamic_conf.yml"
 
+# Konfiguration für Zertifikat-Resolver (Certificates Resolvers)
 certificatesResolvers:
+  # HTTP-Resolver
   http:
     acme:
-      email: erik@xxxxxx.com
-      storage: acme.json
+      email: your@mail.com # Ihre E-Mail-Adresse für die Zertifikatserstellung
+      storage: acme.json  # Speicherort für Zertifikate
       httpChallenge:
         entryPoint: http
 
+# Konfiguration für Server-Transport
 serversTransport:
+  # Deaktiviert die Überprüfung der Serverzertifikate (insecureSkipVerify)
   insecureSkipVerify: true
