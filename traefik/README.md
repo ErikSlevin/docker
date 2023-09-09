@@ -40,4 +40,4 @@ htpasswd -b ~/docker_files/traefik/users.file TestUser3 'SuperSecurePa$$w0rd'
 * [*Traefik v2 – Reverse-Proxy mit CrowdSec einrichten*](https://goneuland.de/traefik-v2-reverse-proxy-mit-crowdsec-einrichten/#more-13529)
 * [*Traefik v2 – Reverse Proxy für Docker unter Debian 10 / 11 / 12 einrichten*](https://goneuland.de/traefik-v2-reverse-proxy-fuer-docker-unter-debian-10-einrichten/)
 * [*Traefik auf Server/Raspberry Pi installieren und einrichten: Reverse Proxy für Docker mit Let’s Encrypt HTTPS-Zertifikaten*](https://u-labs.de/portal/traefik-auf-server-raspberry-pi-installieren-und-einrichten-reverse-proxy-fuer-docker-mit-lets-encrypt-https-zertifikaten/)
-
+* [*GitHub: DoTheEvo - middlewares*](https://github.com/DoTheEvo/Traefik-v2-examples#3-middlewares)
