@@ -30,7 +30,7 @@ services:
       - /home/erik/docker_files/traefik/traefik.yml:/traefik.yml:ro
       - /home/erik/docker_files/traefik/acme.json:/acme.json
       - /home/erik/docker_files/traefik/dynamic_conf.yml:/dynamic_conf.yml
-      - /home/erik/docker_files/traefik/users.file:/users.file
+      - /home/erik/docker_files/traefik/users.file:/users.file:ro
 
     labels:
       # Grundkonfiguration
@@ -51,13 +51,15 @@ services:
       - "providers.file.filename=/dynamic_conf.yml"
 
       # Basic Authentication
-      - "traefik.http.middlewares.traefik-auth.basicauth.usersfile=/users.file"
+      - "traefik.http.middlewares.my-auth.basicauth.usersfile=/users.file"
 
       # Middleware-Konfiguration für sichere Header und Basic Authentication
       - "traefik.http.routers.traefik-secure.middlewares=secHeaders@file,traefik-auth"
 
       # Watchtower - Container automatisch aktualisieren
       - "com.centurylinklabs.watchtower.enable=true"
+
+
 
 networks:
   extern:
