@@ -1,0 +1,66 @@
+version: "3.7"
+
+services:
+  phpipam-web:
+    image: phpipam/phpipam-www:latest
+    container_name: phpipam-web
+    hostname: phpipam-web
+
+    ports:
+      - 9020:80
+
+    environment:
+      TZ: Europe/Berlin
+      IPAM_DATABASE_HOST: mariadb
+      IPAM_DATABASE_USER: $DBUSER
+      IPAM_DATABASE_PASS: $DBPASS
+      IPAM_DATABASE_NAME: $DBNAME
+
+    restart: unless-stopped
+
+    volumes:
+      - phpipam-logo:/phpipam/css/images/logo
+      - phpipam-ca:/usr/local/share/ca-certificates:ro
+
+    labels:
+      # Watchtower - Container automatisch aktualisieren
+      - "com.centurylinklabs.watchtower.enable=true"
+
+    networks:
+      - intern  # Dieser Dienst tritt dem Netzwerk "intern" bei
+
+  phpipam-cron:
+    image: phpipam/phpipam-cron:latest
+    container_name: phpipam-cron
+    hostname: phpipam-cron
+
+    environment:
+        TZ: Europe/Berlin
+        IPAM_DATABASE_HOST: mariadb
+        IPAM_DATABASE_USER: $DBUSER
+        IPAM_DATABASE_PASS: $DBPASS
+        IPAM_DATABASE_NAME: $DBNAME
+        SCAN_INTERVAL: 1h
+
+    restart: unless-stopped
+
+    volumes:
+      - phpipam-ca:/usr/local/share/ca-certificates:ro
+
+    depends_on:
+      - phpipam-web
+
+    labels:
+      # Watchtower - Container automatisch aktualisieren
+      - "com.centurylinklabs.watchtower.enable=true"
+
+    networks:
+      - intern
+
+volumes:
+  phpipam-logo:
+  phpipam-ca:
+
+networks:
+  intern:
+    external: true

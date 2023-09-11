@@ -9,12 +9,8 @@ Self-Hosted Dashboard
 
 Bilder-Syntax ```bild1.jpg```,```bild2.jpg``` ..
 
-1. Ordner ```bg``` in ```/home/erik/``` erstellen
-2. Ausführen ``` docker exec -it heimdall /bin/bash```
-3. Ordner ```bg``` in ```/app/www/public/img/``` erstellen
-4. Container-terminal beenden```exit```
-5. Bilder kopieren zum Server ```C:\Users\erik\Desktop\UnsplashBilder\* Docker-Pi-2:/home/erik/bg``` (Ordner bg chmod 777)
-6. In den Container kopieren ```docker cp . heimdall:/app/www/public/img/bg```
+1. Bilder kopieren zum Server ```C:\Users\erik\Desktop\UnsplashBilder\* Docker-Pi-2:/home/erik/bg``` (Ordner bg chmod 777)
+62. In den Container kopieren ```docker cp . heimdall:/config/www/backgrounds```
 
 ### CSS
 ``` css

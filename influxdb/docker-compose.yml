@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+  grafana:
+    image: influxdb:1.8
+
+    container_name: influxdb-mirror
+    hostname: influxdb-mirror
+    
+    ports:
+      - 9080:3000 
+            
+    volumes:
+      - influxdb:/var/lib/influxdb                                            
+      - grafana-datasources:/etc/grafana/provisioning/datasources            
+
+    environment:
+      - INFLUXDB_DATA_ENGINE=tsm1
+      - INFLUXDB_REPORTING_DISABLED=false
+      - INFLUXDB_ADMIN_USER=${INFLUXDB_ADMIN_USER}
+      - INFLUXDB_ADMIN_PASSWORD=${INFLUXDB_ADMIN_PASSWORD}
+      - INFLUXDB_USER=${INFLUXDB_USER}
+      - INFLUXDB_USER_PASSWORD=${INFLUXDB_USER_PASSWORD}
+      - INFLUXDB_READ_USER=${INFLUXDB_READ_USER}
+      - INFLUXDB_READ_USER_PASSWORD=${INFLUXDB_READ_USER_PASSWORD}
+      - INFLUXDB_DB=${INFLUXDB_DB}
+      - INFLUXDB_HTTP_LOG_ENABLED=false
+      - INFLUXDB_META_LOGGING_ENABLED=false
+      - INFLUXDB_DATA_QUERY_LOG_ENABLED=false
+      - INFLUXDB_LOGGING_LEVEL=warn
+      - TZ=${TZ}                                            
+
+    restart: always
+
+    networks:
+      - intern
+
+    labels:
+      # Watchtower - Container automatisch aktualisieren
+      - "com.centurylinklabs.watchtower.enable=true"
+
+networks:
+  extern:
+    external: true
+
+volumes:
+  influxdb:
+    name: influxdb
+
