@@ -6,10 +6,23 @@
 
 | Datum | Beschreibung |
 |:----------:|--------------|
-| 02.01.2023 | Anleitung erstellt |
+| 09.10.2023 | Anleitung erstellt |
+| 10.10.2023 | Backup & Restore hinzugefügt |
 
 Wenn keine basicauth via File gewünscht ist, folgenes Label entfernen:
 ``` yaml
 # .htaccess Authentifizierung
 - "traefik.http.routers.wireguard-secure.middlewares=my-auth"
+```
+
+## Backup
+
+``` console
+docker stop wireguard
+
+# Backup wird im aktuellen Verzeichniss gespeichert
+docker run --rm --volumes-from wireguard -v $(pwd):/backup busybox tar cvfz /backup/$(date +'%Y%m%d')-wireguard-backup.tar /etc/wireguard
+
+docker start wireguard
+
 ```
