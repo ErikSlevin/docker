@@ -1,0 +1,27 @@
+version: "3"
+services:
+  app:
+    image: linkace/linkace:simple
+    restart: unless-stopped
+
+    environment:
+      - APP_KEY=base64:sieheanleitung
+      - DB_HOST=mariadb
+      - DB_DATABASE=linkacedb
+      - DB_USERNAME=root
+      - DB_PASSWORD=P@ssw0rd
+    ports:
+      - 9020:80
+    volumes:
+      - linkace_logs:/app/storage/logs
+      - /home/erik/docker_files/linkace/.env:/app/.env
+      
+    networks:
+      - intern
+
+volumes:
+  linkace_logs:
+
+networks:
+  intern:
+    external: true

@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+  drawio:
+
+    image: jgraph/drawio:latest
+    container_name: drawio
+    hostname: drawio
+    restart: unless-stopped
+
+    ports:
+      - 9010:8080
+
+    labels:
+       # Watchtower - Container automatisch aktualisieren
+      - "com.centurylinklabs.watchtower.enable=true"
