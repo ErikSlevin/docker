@@ -1,0 +1,16 @@
+users:
+    erik:
+        password: XXXXXXXXXXXXXXXXXXXXXXXX
+        displayname: Erik
+        email: your@email.de
+        groups:
+            - admin
+        disabled: false
+
+    austausch:
+        password: XXXXXXXXXXXXXXXXXXXXXXXX
+        displayname: Austausch
+        email: your@email.de
+        groups:
+            - user
+        disabled: false

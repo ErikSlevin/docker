@@ -1,0 +1,86 @@
+###############################################################
+#                   Authelia configuration                    #
+###############################################################
+
+jwt_secret: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+default_redirection_url: https://authelia.domain.de
+theme: dark
+
+server:
+  host: 0.0.0.0
+  port: 9091
+
+log:
+  level: info
+
+totp:
+  issuer: authelia
+  period: 30
+  skew: 1
+
+ntp:
+  address: "ntp0.fau.de:123"
+  version: 3
+  max_desync: 3s
+  disable_startup_check: false
+  disable_failure: false
+
+authentication_backend:
+  file:
+    path: /config/users_database.yml
+    password:
+      algorithm: argon2id
+      iterations: 1
+      salt_length: 16
+      parallelism: 8
+      memory: 128
+
+access_control:
+  default_policy: deny
+  rules:
+    - domain: authelia.domain.de
+      policy: bypass
+
+    - domain: portainer.domain.de
+      policy: two_factor
+      subject: ['user:erik']
+
+    - domain: dsm.domain.de
+      policy: two_factor
+      subject: ['user:erik']
+
+    - domain: file.domain.de
+      policy: one_factor
+      subject: ['user:austausch', 'user:erik']
+
+    - domain: traefik.domain.de
+      policy: two_factor
+      subject: ['user:erik']
+
+
+session:
+  name: authelia_session
+  expiration: 3600  # 1 Stunde
+  inactivity: 300  # 5 Minuten
+  domain: domain.de
+
+
+regulation:
+  max_retries: 3
+  find_time: 120
+  ban_time: 300
+
+storage:
+  local:
+    path: /config/db.sqlite3
+  encryption_key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+notifier:
+  smtp:
+    username: your@email.de
+    password: yourpassword
+    host: smtp-mail.outlook.com
+    port: 587
+    sender: your@email.de
+    subject: "[Authelia] {title}"
+#  filesystem:
+#    filename: /config/notification.txt

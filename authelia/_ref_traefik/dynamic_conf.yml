@@ -1,0 +1,114 @@
+tls:
+  options:
+    default:
+      minVersion: VersionTLS12
+      cipherSuites:
+        - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305
+        - TLS_AES_128_GCM_SHA256
+        - TLS_AES_256_GCM_SHA384
+        - TLS_CHACHA20_POLY1305_SHA256
+      curvePreferences:
+        - CurveP521
+        - CurveP384
+      sniStrict: true
+http:
+  routers:
+    dsm-file:
+      entryPoints:
+        - "websecure"
+      rule: Host(`file.yourdomain.de`)
+      middlewares:
+        - default
+        - traefik-crowdsec-bouncer
+        - middlewares-authelia
+      tls:
+        certResolver: http_resolver
+      service: dsm-file
+
+    dsm-frontend:
+      entryPoints:
+        - "websecure"
+      rule: Host(`dsm.yourdomain.de`)
+      middlewares:
+        - default
+        - traefik-crowdsec-bouncer
+        - middlewares-authelia
+      tls:
+        certResolver: http_resolver
+      service: dsm-frontend
+
+    fav:
+      entryPoints:
+        - "websecure"
+      rule: Host(`fav.yourdomain.de`)
+      middlewares:
+        - default
+        - traefik-crowdsec-bouncer
+      tls:
+        certResolver: http_resolver
+      service: fav
+
+  services:
+    dsm-file:
+      loadBalancer:
+        servers:
+          - url: "https://x.x.x.x:30010"
+
+    dsm-frontend:
+      loadBalancer:
+        servers:
+          - url: "https://x.x.x.x:30000"
+
+    fav:
+      loadBalancer:
+        servers:
+          - url: "http://x.x.x.x:80"
+
+  middlewares:
+    default:
+      chain:
+        middlewares:
+          - default-security-headers
+          - gzip
+
+    default-security-headers:
+      headers:
+        browserXssFilter: true
+        contentTypeNosniff: true
+        forceSTSHeader: true
+        frameDeny: true
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 31536000
+        customFrameOptionsValue: "SAMEORIGIN"
+
+    gzip:
+      compress: {}
+
+    traefik-crowdsec-bouncer:
+      forwardauth:
+        address: http://traefik-crowdsec-bouncer:8080/api/v1/forwardAuth
+        trustForwardHeader: true
+
+    real-ip-cf:
+      plugin:
+        real-ip:
+          Proxy:
+            - proxyHeadername: "*"
+              realIP: Cf-Connecting-Ip
+              OverwriteXFF: true
+
+#    traefikAuth:
+#      basicAuth:
+#        users:
+#          - "Erik:$apr1$zAvedMIZ$tZ.Wd96kZQGmwo7Q0ca2v."
+
+    middlewares-authelia:
+      forwardAuth:
+        address: "http://authelia:9091/api/verify?rd=https://authelia.yourdomain.de"
+        trustForwardHeader: true
+        authResponseHeaders:
+          - "Remote-User"
+          - "Remote-Groups"

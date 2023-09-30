@@ -1,0 +1,39 @@
+version: '3'
+services:
+  authelia:
+    image: authelia/authelia:latest
+    container_name: authelia
+    hostname: authelia
+
+    volumes:
+      - /home/erik/docker_files/authelia/config:/config
+
+    networks:
+      - extern
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.authelia.entrypoints=websecure"
+      - "traefik.http.routers.authelia.rule=Host(`authelia.yourdomain.de`)"
+      - "traefik.http.routers.authelia.tls=true"
+      - "traefik.http.routers.authelia.tls.certresolver=http_resolver"
+      - "traefik.http.routers.authelia.service=authelia"
+      - "traefik.http.services.authelia.loadbalancer.server.port=9091"
+      - "traefik.docker.network=extern"
+      - "traefik.http.routers.authelia.middlewares=default@file, middlewares-authelia@file"
+
+    restart: unless-stopped
+
+    healthcheck:
+      disable: true
+
+    environment:
+      - TZ= Europe/Berlin
+
+volumes:
+  authelia:
+    name: authelia
+
+networks:
+  extern:
+    external: true
