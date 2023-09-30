@@ -101,7 +101,7 @@ http:
         servers:
           - url: "https://x.x.x.x:30000"
 ```
-> [`dynamic_conf.yml`](traefik/dynamic_conf.yml)
+> [`dynamic_conf.yml`](_traefik/dynamic_conf.yml)
 
 ## Quellen
 - [*Authelia – Zweifaktor Authentifizierung mittels Docker Compose und Traefik installieren*](https://goneuland.de/authelia-zweifaktor-authentifizierung-mittels-docker-compose-und-traefik-installieren/)
