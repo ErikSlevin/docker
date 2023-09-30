@@ -1,8 +1,18 @@
 # Authelia – Zweifaktor Authentifizierung
 
+Authelia ermöglicht 2FA für Docker mit Traefik, um die Webanwendungssicherheit zu steigern.
+
 | Datum | Beschreibung |
 |:----------:|--------------|
 | 13.10.2023 | Anleitung erstellt |
+
+## Beschreibung
+
+Authelia ist eine leistungsstarke Open-Source-Softwarelösung, die speziell für die Implementierung von Zwei-Faktor-Authentifizierung (2FA) in Docker-Umgebungen in Verbindung mit dem Reverse-Proxy Traefik entwickelt wurde. Mit Authelia können Docker-basierte Webanwendungen und Dienste eine zusätzliche Sicherheitsebene hinzufügen, indem sie Benutzer zur Eingabe eines zweiten Authentifizierungsfaktors auffordern, nachdem sie ihr Passwort eingegeben haben.
+
+Diese Kombination aus Authelia und Traefik ermöglicht es, den Zugriff auf Ihre Webanwendungen zu schützen und sicherzustellen, dass nur autorisierte Benutzer auf vertrauliche Informationen zugreifen können. Authelia unterstützt verschiedene 2FA-Methoden, darunter Time-based One-Time Passwords (TOTP) und YubiKey-Integration, und kann einfach in bestehende Docker-Container und Traefik-Reverse-Proxy-Setups integriert werden.
+
+Mit Authelia und Traefik können Sie die Sicherheit Ihrer Docker-Anwendungen erhöhen und gleichzeitig eine benutzerfreundliche und flexible Methode zur Implementierung von 2FA in Ihren Projekten nutzen.
 
 ## Grundkonfiguration
 ``` shell
