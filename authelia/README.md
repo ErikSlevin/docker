@@ -4,7 +4,7 @@ Authelia ermöglicht 2FA für Docker mit Traefik, um die Webanwendungssicherheit
 
 | Datum | Beschreibung |
 |:----------:|--------------|
-| 13.10.2023 | Anleitung erstellt |
+| 01.10.2023 | Anleitung erstellt |
 
 ## Beschreibung
 
