@@ -4,7 +4,7 @@ Authelia ermöglicht 2FA für Docker mit Traefik, um die Webanwendungssicherheit
 
 | Datum | Beschreibung |
 |:----------:|--------------|
-| 13.10.2023 | Anleitung erstellt |
+| 01.10.2023 | Anleitung erstellt |
 
 ## Beschreibung
 
@@ -15,6 +15,17 @@ Diese Kombination aus Authelia und Traefik ermöglicht es, den Zugriff auf Ihre 
 Mit Authelia und Traefik können Sie die Sicherheit Ihrer Docker-Anwendungen erhöhen und gleichzeitig eine benutzerfreundliche und flexible Methode zur Implementierung von 2FA in Ihren Projekten nutzen.
 
 ## Grundkonfiguration
+```
+.
+└── docker_files
+    └── authelia
+        ├── config
+        │   ├── configuration.yml
+        │   ├── db.sqlite3
+        │   └── users_database.yml
+        └── docker-compose.yml
+```
+
 ``` shell
 # Ordner-Struktur anlegen
 mkdir -p ~/docker_files/authelia/config
