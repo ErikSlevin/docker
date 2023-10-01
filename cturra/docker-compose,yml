@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+  ntp:
+    build: .
+    image: cturra/ntp:latest
+    container_name: ntp
+    hostname: ntp
+    restart: always
+
+    ports:
+      - 123:123/udp
+
+    environment:
+      # Stratum 1 Server
+      # https://www.advtimesync.com/docs/manual/stratum1.html
+      - NTP_SERVERS=ntp0.fau.de,
+                    ntp1.fau.de,
+                    ntp2.fau.de,
+                    ntp3.fau.de,
+                    ntps1-0.cs.tu-berlin.de,
+                    ntps1-1.cs.tu-berlin.de,
+                    ptbtime1.ptb.de,
+                    ptbtime2.ptb.de,
+                    rustime01.rus.uni-stuttgart.de
+      - LOG_LEVEL=0
+      - TZ=Europe/Berlin
+
+    labels:
+      # Watchtower - Container automatisch aktualisieren
+      - "com.centurylinklabs.watchtower.enable=true"
+
+    networks:
+      - intern
+
+networks:
+  intern:
+    external: true
