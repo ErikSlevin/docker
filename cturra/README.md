@@ -1,4 +1,4 @@
-# Authelia – Zweifaktor Authentifizierung
+# cturra
 
 NTP-Zeitserver mit chrony auf Alpine Linux.
 
