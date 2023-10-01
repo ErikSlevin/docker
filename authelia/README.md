@@ -17,11 +17,13 @@ Mit Authelia und Traefik können Sie die Sicherheit Ihrer Docker-Anwendungen erh
 ## Grundkonfiguration
 ```
 .
-├── config
-│   ├── configuration.yml
-│   ├── db.sqlite3
-│   └── users_database.yml
-└── docker-compose.yml
+└── docker_files
+    └── authelia
+        ├── config
+        │   ├── configuration.yml
+        │   ├── db.sqlite3
+        │   └── users_database.yml
+        └── docker-compose.yml
 ```
 
 ``` shell
