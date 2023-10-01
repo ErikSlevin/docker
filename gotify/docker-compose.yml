@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+  gotify:
+    image: gotify/server-arm64:latest
+    container_name: gotify
+    hostname: gotify
+
+    environment:
+      - TZ=Europe/Berlin                      # Zeitzone
+      - GOTIFY_DEFAULTUSER_NAME=$GOTIFY_USER  # Benutzername
+      - GOTIFY_DEFAULTUSER_PASS=$GOTIFY_PASS  # Passwort
+      - GOTIFY_REGISTRATION=false             # Registrierung sperren
+
+    volumes:
+      - gotify:/app/data
+
+    networks:
+      - extern
+
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.gotify-secure.entrypoints: websecure
+      traefik.http.routers.gotify-secure.middlewares: default@file
+      traefik.http.routers.gotify-secure.rule: Host(`gotify.$TLD`)
+      traefik.http.routers.gotify-secure.service: gotify
+      traefik.http.routers.gotify-secure.tls: "true"
+      traefik.http.routers.gotify-secure.tls.certresolver: http_resolver
+      traefik.http.routers.gotify.entrypoints: web
+      traefik.http.routers.gotify.rule: Host(`gotify.$TLD`)
+      traefik.http.services.gotify.loadbalancer.server.port: "80"
+      traefik.docker.network: extern
+
+      # Watchtower - Container automatisch aktualisieren
+      com.centurylinklabs.watchtower.enable: true
+
+    restart: always
+
+networks:
+
+  extern:
+    external: true
+
+volumes:
+  gotify:
+    name: gotify
