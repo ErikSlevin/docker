@@ -1,0 +1,40 @@
+version: "3"
+services:
+  watchtower:
+    image: containrrr/watchtower:latest
+
+    container_name: watchtower
+    hostname: watchtower
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
+
+    environment:
+    - WATCHTOWER_LABEL_ENABLE=true                                      # Aktualisiere explizit nur die Container, die gelabelt sind
+    - WATCHTOWER_SCHEDULE=0 0 1 * * 1                                   # Jeden Montag um 01:00 Uhr Nachts ausführen
+    - WATCHTOWER_CLEANUP=true                                           # Alte Images entfernen
+    - WATCHTOWER_TIMEOUT=30s                                            # 30s Timeout
+    - WATCHTOWER_INCLUDE_RESTARTING=true                                # Nach Aktualisierung Container neustarten
+    - WATCHTOWER_ROLLING_RESTART=true                                   # Container nacheinander statt gleichzeitig herrunter fahren
+    - WATCHTOWER_LIFECYCLE_HOOK=true                                    # erlaubt das Ausführen von Skripts vor oder nach dem Updaten des Containers
+
+    # Gotify
+    - WATCHTOWER_NOTIFICATIONS=gotify                                   # Gotify als Push-Benachrichtigngsdienst
+    - WATCHTOWER_NOTIFICATION_GOTIFY_URL=$GOTIFY_URL                    # Gotify URL oder IP
+    - WATCHTOWER_NOTIFICATION_GOTIFY_TOKEN=$GOTIFY_TOKEN_WATCHTOWER     # Gotify Token
+    - WATCHTOWER_NOTIFICATION_REPORT=true                               # Zusammenfassung senden
+    
+
+    labels:
+      # Watchtower - Container automatisch überwachen, melden wenn neue Version verfügbar ist
+      - "com.centurylinklabs.watchtower.monitor-only=true"
+
+    restart: always
+
+    networks:
+      - intern
+    
+networks:
+  intern:
+    external: true
